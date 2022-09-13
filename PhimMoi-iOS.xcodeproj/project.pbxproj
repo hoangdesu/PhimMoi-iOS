@@ -17,6 +17,7 @@
 		29C4989128C6A50400363569 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 29C4989028C6A50400363569 /* FirebaseStorage */; };
 		29C4989328C6A57A00363569 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29C4989228C6A57A00363569 /* GoogleService-Info.plist */; };
 		29C4989528C6A71E00363569 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4989428C6A71E00363569 /* Movie.swift */; };
+		F44729D228D0514D0076F0C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44729D128D0514D0076F0C5 /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		29C4989228C6A57A00363569 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29C4989428C6A71E00363569 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		29C4989628C6AB4A00363569 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F44729D128D0514D0076F0C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +67,7 @@
 		29C4987728C6A01700363569 /* PhimMoi-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				29C4988828C6A22400363569 /* ViewModel */,
-				29C4988728C6A22000363569 /* View */,
+				F44729CF28D0512B0076F0C5 /* View */,
 				29C4988628C6A21500363569 /* Model */,
 				29C4987828C6A01700363569 /* PhimMoi_iOSApp.swift */,
 				29C4987A28C6A01700363569 /* ContentView.swift */,
@@ -93,18 +94,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		29C4988728C6A22000363569 /* View */ = {
+		F44729CF28D0512B0076F0C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F44729D128D0514D0076F0C5 /* WelcomeView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		29C4988828C6A22400363569 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +185,7 @@
 				29C4987B28C6A01700363569 /* ContentView.swift in Sources */,
 				29C4987928C6A01700363569 /* PhimMoi_iOSApp.swift in Sources */,
 				29C4989528C6A71E00363569 /* Movie.swift in Sources */,
+				F44729D228D0514D0076F0C5 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PhimMoi-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = AHZYNUTR8C;
+				DEVELOPMENT_TEAM = A397Q3FW3Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -348,7 +344,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PhimMoi-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = AHZYNUTR8C;
+				DEVELOPMENT_TEAM = A397Q3FW3Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
