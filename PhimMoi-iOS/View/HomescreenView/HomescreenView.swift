@@ -26,25 +26,36 @@ struct HomescreenView: View {
             WelcomeView()
                 .tabItem {
                     Image(systemName: "house")
-                    Text("WelcomeView")
+                    Text("Home")
                 }
                 .tag(Screen.welcomeView)
+            
             MovieListView()
                 .tabItem {
                     Image(systemName: "heart")
-                    Text("MovieListView")
+                    Text("MovieList")
                 }
                 .tag(Screen.movieListView)
+            
             AddMovieView()
                 .tabItem {
-                    Image(systemName: "plus")
-                    Text("AddMovieView")
+                    Image(systemName: "plus.square")
+                    Text("Add movie")
                 }
                 .tag(Screen.addMovieView)
+            
             UserView()
                 .tabItem {
                     Image(systemName: "person")
-                    Text("UserView")
+                    Text("User")
+                }
+                .tag(Screen.userView)
+            
+            // put any view here for testing
+            UserView()
+                .tabItem {
+                    Image(systemName: "circle")
+                    Text("Test")
                 }
                 .tag(Screen.userView)
         }
