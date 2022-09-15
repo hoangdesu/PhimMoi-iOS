@@ -12,7 +12,7 @@ struct Movie: Identifiable {
     var title: String
     var poster: String?
     var overview: String?
-    var releaseYear: Int?
+    var releaseYear: String?
     var genre: String?
     var trailer: String?
 }
