@@ -16,7 +16,9 @@ enum Screen {
 
 struct HomescreenView: View {
     
-    @State var selectedScreen: Screen = .welcomeView
+    @EnvironmentObject var movieVM: MovieViewModel
+    
+    @State var selectedScreen: Screen = .addMovieView
     
     var body: some View {
         
@@ -26,25 +28,36 @@ struct HomescreenView: View {
             WelcomeView()
                 .tabItem {
                     Image(systemName: "house")
-                    Text("WelcomeView")
+                    Text("Home")
                 }
                 .tag(Screen.welcomeView)
+            
             MovieListView()
                 .tabItem {
                     Image(systemName: "heart")
-                    Text("MovieListView")
+                    Text("MovieList")
                 }
                 .tag(Screen.movieListView)
+            
             AddMovieView()
                 .tabItem {
-                    Image(systemName: "plus")
-                    Text("AddMovieView")
+                    Image(systemName: "plus.square")
+                    Text("Add movie")
                 }
                 .tag(Screen.addMovieView)
+            
             UserView()
                 .tabItem {
                     Image(systemName: "person")
-                    Text("UserView")
+                    Text("User")
+                }
+                .tag(Screen.userView)
+            
+            // put any view here for testing
+            UserView()
+                .tabItem {
+                    Image(systemName: "circle")
+                    Text("Test")
                 }
                 .tag(Screen.userView)
         }
@@ -56,5 +69,6 @@ struct HomescreenView: View {
 struct HomescreenView_Previews: PreviewProvider {
     static var previews: some View {
         HomescreenView()
+            .environmentObject(MovieViewModel.shared)
     }
 }
