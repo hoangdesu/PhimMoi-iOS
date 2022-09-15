@@ -9,13 +9,12 @@ import SwiftUI
 
 struct AddMovieView: View {
     
+    @EnvironmentObject var movieVM: MovieViewModel
+    
     @State private var movieTitle = ""
-    
     @State var selection = ""
-    
     @State var birthDate = Date()
-    
-    @State var text = ""
+    @State var overview = ""
     
     var body: some View {
         ZStack {
@@ -27,18 +26,18 @@ struct AddMovieView: View {
                     }
                     
                     Section(header: SectionHeader("Movie Genre")) {
-                        TextField("Add genre", text: $text)
+                        TextField("Add genre", text: $overview)
                     }
                     
                     Section(header: SectionHeader("Overview")) {
-                        TextEditor(text: $text)
+                        TextEditor(text: $overview)
                     }
                     
                     
                     
                     
                     Button("Add movie") {
-                        
+                        movieVM.addMovie(movie: Movie(id: "1", title: movieTitle, overview: overview))
                     }
                     
                     

@@ -8,6 +8,9 @@
 import Foundation
 import Firebase
 
+// constants
+let DB_MOVIES_COLLECTION = "movies"
+
 class MovieViewModel: ObservableObject {
     
     // using Singleton design pattern
@@ -22,7 +25,7 @@ class MovieViewModel: ObservableObject {
         self.movies.removeAll()
         
         let db = Firestore.firestore()
-        let ref = db.collection("Movies-test")
+        let ref = db.collection(DB_MOVIES_COLLECTION)
         ref.getDocuments { snapshot, error in
             guard error == nil else {
                 print(error!.localizedDescription)
@@ -43,7 +46,20 @@ class MovieViewModel: ObservableObject {
         }
     }
     
-    func sayHello() {
-        print("Hello from movieVM")
+    func addMovie(movie: Movie) {
+        let db = Firestore.firestore()
+        let ref = db.collection(DB_MOVIES_COLLECTION).document(movie.title)
+        let values = [
+            "id": movie.id,
+            "title": movie.title,
+            "overview": movie.overview ?? "n/a"
+        ]
+        
+        ref.setData(values) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
     }
+    
 }
