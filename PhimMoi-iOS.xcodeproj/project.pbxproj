@@ -12,6 +12,8 @@
 		2935967E28D3092B0056A195 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935967D28D3092B0056A195 /* MovieListView.swift */; };
 		2935968128D30CB80056A195 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935968028D30CB80056A195 /* UserView.swift */; };
 		2935968428D323FD0056A195 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2935968328D323FD0056A195 /* YouTubePlayerKit */; };
+		2935968928D38E480056A195 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935968828D38E480056A195 /* MovieViewModel.swift */; };
+		2935968B28D38E930056A195 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935968A28D38E930056A195 /* SessionViewModel.swift */; };
 		29C4987928C6A01700363569 /* PhimMoi_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4987828C6A01700363569 /* PhimMoi_iOSApp.swift */; };
 		29C4987B28C6A01700363569 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4987A28C6A01700363569 /* ContentView.swift */; };
 		29C4987D28C6A01800363569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C4987C28C6A01800363569 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		2935967A28D308D40056A195 /* AddMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieView.swift; sourceTree = "<group>"; };
 		2935967D28D3092B0056A195 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieListView.swift; path = ../../../../../../../../Desktop/MovieListView.swift; sourceTree = "<group>"; };
 		2935968028D30CB80056A195 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		2935968828D38E480056A195 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		2935968A28D38E930056A195 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
 		29C4987528C6A01700363569 /* PhimMoi-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PhimMoi-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C4987828C6A01700363569 /* PhimMoi_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhimMoi_iOSApp.swift; sourceTree = "<group>"; };
 		29C4987A28C6A01700363569 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +101,15 @@
 			path = UserView;
 			sourceTree = "<group>";
 		};
+		2935968728D38E1D0056A195 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2935968828D38E480056A195 /* MovieViewModel.swift */,
+				2935968A28D38E930056A195 /* SessionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		29C4986C28C6A01700363569 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +130,7 @@
 		29C4987728C6A01700363569 /* PhimMoi-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				2935968728D38E1D0056A195 /* ViewModel */,
 				F44729CF28D0512B0076F0C5 /* View */,
 				29C4988628C6A21500363569 /* Model */,
 				29C4987828C6A01700363569 /* PhimMoi_iOSApp.swift */,
@@ -239,10 +253,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C4987B28C6A01700363569 /* ContentView.swift in Sources */,
+				2935968B28D38E930056A195 /* SessionViewModel.swift in Sources */,
 				2935967E28D3092B0056A195 /* MovieListView.swift in Sources */,
 				29C4987928C6A01700363569 /* PhimMoi_iOSApp.swift in Sources */,
 				2935968128D30CB80056A195 /* UserView.swift in Sources */,
 				29C4989528C6A71E00363569 /* Movie.swift in Sources */,
+				2935968928D38E480056A195 /* MovieViewModel.swift in Sources */,
 				2935967828D3012C0056A195 /* HomescreenView.swift in Sources */,
 				F44729D228D0514D0076F0C5 /* WelcomeView.swift in Sources */,
 				2935967B28D308D40056A195 /* AddMovieView.swift in Sources */,

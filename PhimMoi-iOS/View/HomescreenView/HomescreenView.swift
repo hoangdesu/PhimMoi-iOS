@@ -16,6 +16,8 @@ enum Screen {
 
 struct HomescreenView: View {
     
+    @EnvironmentObject var movieVM: MovieViewModel
+    
     @State var selectedScreen: Screen = .addMovieView
     
     var body: some View {
@@ -67,5 +69,6 @@ struct HomescreenView: View {
 struct HomescreenView_Previews: PreviewProvider {
     static var previews: some View {
         HomescreenView()
+            .environmentObject(MovieViewModel.shared)
     }
 }
