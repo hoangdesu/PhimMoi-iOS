@@ -1,6 +1,6 @@
 #  PhimMoi-iOS
 
-# Design
+# Design reference
 
 https://dribbble.com/shots/5026483-Netflix-Mobile-App-Redesign
 
@@ -26,6 +26,7 @@ bced5fddc10769617271e99996a9a0a0
 # Docs
 - Automatically resolving git merge conflicts in Xcode’s project.pbxproj file: https://roadfiresoftware.com/2015/09/automatically-resolving-git-merge-conflicts-in-xcodes-project-pbxproj/
 
-# Dependencies
+
+# Packages
 - https://github.com/firebase/firebase-ios-sdk
 - https://github.com/SvenTiigi/YouTubePlayerKit
