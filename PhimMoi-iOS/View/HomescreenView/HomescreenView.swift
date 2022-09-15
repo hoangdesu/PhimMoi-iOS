@@ -16,7 +16,7 @@ enum Screen {
 
 struct HomescreenView: View {
     
-    @State var selectedScreen: Screen = .welcomeView
+    @State var selectedScreen: Screen = .addMovieView
     
     var body: some View {
         

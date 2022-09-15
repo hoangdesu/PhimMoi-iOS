@@ -10,4 +10,9 @@ import Foundation
 struct Movie: Identifiable {
     var id: String
     var title: String
+    var poster: String?
+    var overview: String?
+    var releaseYear: Int?
+    var genre: String?
+    var trailer: String?
 }
