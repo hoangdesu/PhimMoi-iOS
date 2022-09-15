@@ -46,9 +46,12 @@ class MovieViewModel: ObservableObject {
         }
     }
     
-    func addMovie(movie: Movie) {
+    func addMovie(movie: Movie) -> Bool {
         let db = Firestore.firestore()
         let ref = db.collection(DB_MOVIES_COLLECTION).document(movie.title)
+        
+        var err = false
+        
         let values = [
             "id": movie.id,
             "title": movie.title,
@@ -58,8 +61,14 @@ class MovieViewModel: ObservableObject {
         ref.setData(values) { error in
             if let error = error {
                 print(error.localizedDescription)
+                err = true
             }
         }
+        
+        if err {
+            return false
+        }
+        return true
     }
     
 }

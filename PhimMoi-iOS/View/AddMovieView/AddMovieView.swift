@@ -14,10 +14,16 @@ struct AddMovieView: View {
     @State private var movieTitle = ""
     @State var selection = ""
     @State var birthDate = Date()
-    @State var overview = ""
+    @State private var overview = ""
+    @State private var genre = ""
+    
+    
+    @State private var showAddSuccessAlert = false
+    @State private var showAddFailAlert = false
     
     var body: some View {
-        ZStack {
+        
+            
             NavigationView {
                 
                 Form {
@@ -26,19 +32,23 @@ struct AddMovieView: View {
                     }
                     
                     Section(header: SectionHeader("Movie Genre")) {
-                        TextField("Add genre", text: $overview)
+                        TextField("Add genre", text: $genre)
                     }
                     
                     Section(header: SectionHeader("Overview")) {
                         TextEditor(text: $overview)
                     }
                     
-                    
-                    
-                    
                     Button("Add movie") {
-                        movieVM.addMovie(movie: Movie(id: "1", title: movieTitle, overview: overview))
+                        let addMovieSuccess = movieVM.addMovie(movie: Movie(id: UUID().uuidString, title: movieTitle, overview: overview))
+                        if addMovieSuccess {
+                            showAddSuccessAlert = true
+                        } else {
+                            showAddFailAlert = true
+                        }
                     }
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                    
                     
                     
                     
@@ -64,11 +74,16 @@ struct AddMovieView: View {
                     //                .font(.system(.body, design: .rounded))
                 }
                 
-                
-                
-            }
-            
+                .navigationTitle("Add new movie")
+        } // NavView
+        .alert("Success", isPresented: $showAddSuccessAlert) {
+            Button("OK", role: .cancel) { }
         }
+        .alert("Add movie failed", isPresented: $showAddFailAlert) {
+            Button("OK", role: .cancel) { }
+        }
+        
+        
     }
 }
 
