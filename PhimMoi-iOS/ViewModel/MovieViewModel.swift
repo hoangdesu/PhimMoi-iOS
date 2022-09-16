@@ -20,6 +20,7 @@ class MovieViewModel: ObservableObject {
     
     // Properties
     @Published var movies = [Movie]()
+    @Published var selectedMovie: Movie?
     
     func fetchMovies() {
         self.movies.removeAll()

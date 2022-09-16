@@ -14,7 +14,7 @@ let title = "Cinderella"
 
 
 struct FeatureCard: View {
-    
+    @State var showDetail = false
     var body: some View {
         ZStack {
             KFImage(URL(string: url1)!)
@@ -37,6 +37,12 @@ struct FeatureCard: View {
         .cornerRadius(15)
         .shadow(color: Color.gray, radius: 15, x: 0, y: 10)
         .padding(.bottom, 15)
+        .onTapGesture {
+            showDetail.toggle()
+        }
+        .sheet(isPresented: $showDetail) {
+            DetailView()
+        }
         
     }
 }
