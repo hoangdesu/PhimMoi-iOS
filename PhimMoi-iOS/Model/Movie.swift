@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: Identifiable {
+struct Movie: Identifiable, Codable {
     var id: String
     var title: String
     var poster: String?
