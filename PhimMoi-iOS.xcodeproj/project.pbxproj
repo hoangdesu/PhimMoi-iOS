@@ -25,6 +25,7 @@
 		29C4989328C6A57A00363569 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29C4989228C6A57A00363569 /* GoogleService-Info.plist */; };
 		29C4989528C6A71E00363569 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4989428C6A71E00363569 /* Movie.swift */; };
 		7F12C42328D460CA00D9B9AB /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12C42228D460CA00D9B9AB /* SectionHeader.swift */; };
+		7F12C42528D49B4E00D9B9AB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12C42428D49B4E00D9B9AB /* ImagePicker.swift */; };
 		F44729D228D0514D0076F0C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44729D128D0514D0076F0C5 /* WelcomeView.swift */; };
 		F47E9CB628D45B95005C89E4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E9CB528D45B95005C89E4 /* Test.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 		29C4989428C6A71E00363569 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		29C4989628C6AB4A00363569 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7F12C42228D460CA00D9B9AB /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		7F12C42428D49B4E00D9B9AB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F44729D128D0514D0076F0C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		F47E9CB528D45B95005C89E4 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +89,7 @@
 			children = (
 				2935967A28D308D40056A195 /* AddMovieView.swift */,
 				7F12C42228D460CA00D9B9AB /* SectionHeader.swift */,
+				7F12C42428D49B4E00D9B9AB /* ImagePicker.swift */,
 			);
 			path = AddMovieView;
 			sourceTree = "<group>";
@@ -167,8 +170,8 @@
 		F44729CF28D0512B0076F0C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2935967928D308670056A195 /* AddMovieView */,
 				2935967628D301070056A195 /* HomescreenView */,
+				2935967928D308670056A195 /* AddMovieView */,
 				2935967C28D308FA0056A195 /* MovieListView */,
 				2935967F28D30CA70056A195 /* UserView */,
 				2935967528D300E60056A195 /* WelcomeView */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F12C42528D49B4E00D9B9AB /* ImagePicker.swift in Sources */,
 				29C4987B28C6A01700363569 /* ContentView.swift in Sources */,
 				29802FA328D441240014535D /* MovieListView.swift in Sources */,
 				2935968B28D38E930056A195 /* SessionViewModel.swift in Sources */,
