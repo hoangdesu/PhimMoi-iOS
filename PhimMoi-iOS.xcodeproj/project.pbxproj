@@ -25,8 +25,10 @@
 		29C4989328C6A57A00363569 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29C4989228C6A57A00363569 /* GoogleService-Info.plist */; };
 		29C4989528C6A71E00363569 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4989428C6A71E00363569 /* Movie.swift */; };
 		7F12C42328D460CA00D9B9AB /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12C42228D460CA00D9B9AB /* SectionHeader.swift */; };
+		F43746FA28D494A100BE6C01 /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43746F928D494A100BE6C01 /* FeatureCard.swift */; };
+		F43746FD28D4959600BE6C01 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F43746FC28D4959600BE6C01 /* Kingfisher */; };
+		F43746FF28D49D8200BE6C01 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43746FE28D49D8200BE6C01 /* SearchView.swift */; };
 		F44729D228D0514D0076F0C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44729D128D0514D0076F0C5 /* WelcomeView.swift */; };
-		F47E9CB628D45B95005C89E4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E9CB528D45B95005C89E4 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +47,9 @@
 		29C4989428C6A71E00363569 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		29C4989628C6AB4A00363569 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7F12C42228D460CA00D9B9AB /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		F43746F928D494A100BE6C01 /* FeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
+		F43746FE28D49D8200BE6C01 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		F44729D128D0514D0076F0C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		F47E9CB528D45B95005C89E4 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43746FD28D4959600BE6C01 /* Kingfisher in Frameworks */,
 				29C4988D28C6A50400363569 /* FirebaseDatabase in Frameworks */,
 				29C4989128C6A50400363569 /* FirebaseStorage in Frameworks */,
 				2935968428D323FD0056A195 /* YouTubePlayerKit in Frameworks */,
@@ -69,7 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				F44729D128D0514D0076F0C5 /* WelcomeView.swift */,
-				F47E9CB528D45B95005C89E4 /* Test.swift */,
+				F43746F928D494A100BE6C01 /* FeatureCard.swift */,
+				F43746FE28D49D8200BE6C01 /* SearchView.swift */,
 			);
 			path = WelcomeView;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				29C4988E28C6A50400363569 /* FirebaseFirestore */,
 				29C4989028C6A50400363569 /* FirebaseStorage */,
 				2935968328D323FD0056A195 /* YouTubePlayerKit */,
+				F43746FC28D4959600BE6C01 /* Kingfisher */,
 			);
 			productName = "PhimMoi-iOS";
 			productReference = 29C4987528C6A01700363569 /* PhimMoi-iOS.app */;
@@ -230,6 +236,7 @@
 			packageReferences = (
 				29C4988928C6A50400363569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2935968228D323FD0056A195 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+				F43746FB28D4959600BE6C01 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 29C4987628C6A01700363569 /* Products */;
 			projectDirPath = "";
@@ -263,12 +270,13 @@
 				2935968B28D38E930056A195 /* SessionViewModel.swift in Sources */,
 				29C4987928C6A01700363569 /* PhimMoi_iOSApp.swift in Sources */,
 				2935968128D30CB80056A195 /* UserView.swift in Sources */,
-				F47E9CB628D45B95005C89E4 /* Test.swift in Sources */,
 				29C4989528C6A71E00363569 /* Movie.swift in Sources */,
 				2935968928D38E480056A195 /* MovieViewModel.swift in Sources */,
 				2935967828D3012C0056A195 /* HomescreenView.swift in Sources */,
+				F43746FF28D49D8200BE6C01 /* SearchView.swift in Sources */,
 				7F12C42328D460CA00D9B9AB /* SectionHeader.swift in Sources */,
 				F44729D228D0514D0076F0C5 /* WelcomeView.swift in Sources */,
+				F43746FA28D494A100BE6C01 /* FeatureCard.swift in Sources */,
 				2935967B28D308D40056A195 /* AddMovieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +498,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		F43746FB28D4959600BE6C01 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -517,6 +533,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 29C4988928C6A50400363569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		F43746FC28D4959600BE6C01 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F43746FB28D4959600BE6C01 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
