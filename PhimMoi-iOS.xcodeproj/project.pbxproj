@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2903C28528D51A8C00F0ED20 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2903C28428D51A8C00F0ED20 /* Kingfisher */; };
 		2935967828D3012C0056A195 /* HomescreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935967728D3012C0056A195 /* HomescreenView.swift */; };
 		2935967B28D308D40056A195 /* AddMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935967A28D308D40056A195 /* AddMovieView.swift */; };
 		2935968128D30CB80056A195 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935968028D30CB80056A195 /* UserView.swift */; };
@@ -66,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2903C28528D51A8C00F0ED20 /* Kingfisher in Frameworks */,
 				F43746FD28D4959600BE6C01 /* Kingfisher in Frameworks */,
 				29C4988D28C6A50400363569 /* FirebaseDatabase in Frameworks */,
 				29C4989128C6A50400363569 /* FirebaseStorage in Frameworks */,
@@ -194,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				F437470428D4B57D00BE6C01 /* MovieDetail */,
-				2935967928D308670056A195 /* AddMovieView */,
 				2935967628D301070056A195 /* HomescreenView */,
 				2935967928D308670056A195 /* AddMovieView */,
 				2935967C28D308FA0056A195 /* MovieListView */,
@@ -226,7 +223,6 @@
 				29C4988E28C6A50400363569 /* FirebaseFirestore */,
 				29C4989028C6A50400363569 /* FirebaseStorage */,
 				2935968328D323FD0056A195 /* YouTubePlayerKit */,
-				2903C28428D51A8C00F0ED20 /* Kingfisher */,
 				F43746FC28D4959600BE6C01 /* Kingfisher */,
 			);
 			productName = "PhimMoi-iOS";
@@ -260,7 +256,6 @@
 			packageReferences = (
 				29C4988928C6A50400363569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2935968228D323FD0056A195 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
-				2903C28328D51A8C00F0ED20 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				F43746FB28D4959600BE6C01 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 29C4987628C6A01700363569 /* Products */;
@@ -511,14 +506,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2903C28328D51A8C00F0ED20 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
 		2935968228D323FD0056A195 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit";
@@ -546,11 +533,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2903C28428D51A8C00F0ED20 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2903C28328D51A8C00F0ED20 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
 		2935968328D323FD0056A195 /* YouTubePlayerKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2935968228D323FD0056A195 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;

@@ -34,3 +34,4 @@ bced5fddc10769617271e99996a9a0a0
 
 ## Dev logs
 - ImagePicker sometimes doesn't work in simulator, but works well on real phone :/ ?
+- Remove Package.resolved if corrupted, reset caches: https://stackoverflow.com/questions/67185817/package-resolved-file-is-corrupted-or-malformed
