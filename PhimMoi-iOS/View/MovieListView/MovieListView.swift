@@ -15,30 +15,40 @@ struct MovieListView: View {
     @EnvironmentObject var movieVM: MovieViewModel
     
     var body: some View {
-        VStack {
+        
             NavigationView {
                 List(movieVM.movies, id: \.id) { movie in
-                    Group {
-                        Text("ID: \(movie.id)")
-                        Text("Title: \(movie.title)")
-                        if let overview = movie.overview { // bug: unwrap to no value
-                            Text("Overview: \(overview)")
-                        }
+                    
+                    HStack{
+                        Image("dino")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 70)
+                            .cornerRadius(4)
+                            .padding(.vertical, 4)
+                        
+                        //Text("ID: \(movie.id)")
+                        Text("\(movie.title)")
+                            .fontWeight(.semibold)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.5)
+                        
+//                        //if let overview = movie.overview { // bug: unwrap to no value
+//                            Text("Overview: \(overview)")
+                        
                     }
                 }
                 .navigationTitle("Mock movie list")
             }
             
-            Button {
+            .onAppear() {
                 movieVM.fetchMovies()
-            } label: {
-                Text("Fetch mock movie data from Firebase")
             }
             
         }
     }
     
-}
+
 
 struct MovieListView_Previews: PreviewProvider {
     static var previews: some View {

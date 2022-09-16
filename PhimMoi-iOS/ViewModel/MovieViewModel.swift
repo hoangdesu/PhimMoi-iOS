@@ -22,6 +22,7 @@ class MovieViewModel: ObservableObject {
     
     // Properties
     @Published var movies = [Movie]()
+    @Published var selectedMovie: Movie?
     
     @Published var mockPosterURL: String = ""
     
