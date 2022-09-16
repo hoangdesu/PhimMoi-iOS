@@ -32,7 +32,7 @@ struct MovieListView: View {
             Button {
                 movieVM.fetchMovies()
             } label: {
-                Text("Fetch mock movie data from Firebase")
+                Text("Fetch movie data from Firebase")
             }
             
         }
