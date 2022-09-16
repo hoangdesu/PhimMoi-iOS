@@ -43,10 +43,24 @@ struct AddMovieView: View {
         
         // display add movie operation status
         if addMovieSucceeded {
+            
             showAddSuccessAlert = true
         } else {
             showAddFailAlert = true
         }
+        
+        clearForm()
+    }
+    
+    func clearForm() {
+        inpTitle = ""
+        inpPosterPath = ""
+        inpOverview = ""
+        inpReleaseYear = ""
+        inpGenre = ""
+        inpTrailerLink = ""
+        inpLanguage = ""
+        inpLength = ""
     }
     
     // MARK: - FORM VIEW
