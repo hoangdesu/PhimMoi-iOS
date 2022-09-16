@@ -7,12 +7,9 @@
 
 import SwiftUI
 import Foundation
-import Firebase
-import YouTubePlayerKit
-
-let colorNavAppear = UINavigationBarAppearance()
 
 struct WelcomeView: View {
+
     @State private var search = false
     var body: some View {
         ZStack {
@@ -54,6 +51,7 @@ struct WelcomeView: View {
             }
         }
         
+
     }
 }
 

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import PhotosUI
+import Kingfisher
 
 struct AddMovieView: View {
     
@@ -25,8 +27,14 @@ struct AddMovieView: View {
     @State private var showAddSuccessAlert = false
     @State private var showAddFailAlert = false
     
-    // Pickers
+    // Picker
     let genres = ["Action", "Comedy", "Fantasy", "Horror", "Adventure", "Mystery", "Drama", "Science Fiction", "Thriller", "Romance", "Musical"]
+    
+    // PhotoPicker
+    //    @State private var selectedImageData: Data? = nil
+    @State private var showImagePickerSheet = false
+    @State private var inputImage = UIImage(named: "poster-placeholder")
+    @State private var image: Image?
     
     func addMovieHandler() {
         let newMovie = Movie(id: UUID().uuidString,
@@ -63,6 +71,18 @@ struct AddMovieView: View {
         inpLength = ""
     }
     
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        image = Image(uiImage: inputImage)
+    }
+    
+    func uploadImageHandler() {
+        guard let inputImage = self.inputImage else { return }
+        
+        movieVM.uploadImage(image: inputImage)
+        
+    }
+    
     // MARK: - FORM VIEW
     var body: some View {
         
@@ -78,7 +98,6 @@ struct AddMovieView: View {
                 }
                 
                 Section(header: SectionHeader("Genre")) {
-                    //                        TextField("Add genre", text: $inpGenre)
                     Picker("Select genre", selection: $inpGenre) {
                         ForEach(genres, id: \.self) {
                             Text($0)
@@ -87,7 +106,40 @@ struct AddMovieView: View {
                 }
                 
                 Section(header: SectionHeader("Poster")) {
-                    TextEditor(text: $inpPosterPath)
+                    if let inputImage = self.inputImage {
+                        Image(uiImage: inputImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                            .onTapGesture {
+                                showImagePickerSheet = true
+                            }
+                    } else {
+                        Image("poster-placeholder")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                            .onTapGesture {
+                                showImagePickerSheet = true
+                            }
+                    }
+                        
+                    
+                    // FOR TESTING ONLY
+                    Button("Upload image (TEST)") {
+                        uploadImageHandler()
+                    }
+                    
+                    Text("Recently upload photo from Firebase")
+                    
+                    if movieVM.mockPosterURL != "" {
+                        KFImage(URL(string: movieVM.mockPosterURL)!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200)
+                    }
+                    
+                
                 }
                 
                 Section(header: SectionHeader("Release year")) {
@@ -111,37 +163,19 @@ struct AddMovieView: View {
                     addMovieHandler()
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                
-                
-                //                    Section(header: Text("Movie")
-                //                        .fontWeight(.bold)) {
-                //                            FormRowView(firstItem: "Username", secondItem: "\(1)")
-                //                            Picker("Music", selection: $selection) {
-                //                                ForEach(2010...2022, id: \.self) {
-                //                                    Text(String($0))
-                //                                }
-                //                            }
-                //                            .pickerStyle(WheelPickerStyle())
-                //
-                //                            DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
-                //                                Text("Select a date")
-                //                            }
-                //                            .pickerStyle(WheelPickerStyle())
-                //
-                //                            Text("Date is \(birthDate.formatted(date: .long, time: .omitted))")
-                //
-                //                        }
-                //                }
-                //                .font(.system(.body, design: .rounded))
             }
             
             .navigationTitle("Add new movie")
+            .onChange(of: inputImage) { _ in loadImage() }
         } // NavView
         .alert("Success", isPresented: $showAddSuccessAlert) {
             Button("OK", role: .cancel) { }
         }
         .alert("Add movie failed", isPresented: $showAddFailAlert) {
             Button("OK", role: .cancel) { }
+        }
+        .sheet(isPresented: $showImagePickerSheet) {
+            ImagePicker(image: $inputImage)
         }
         
     }
