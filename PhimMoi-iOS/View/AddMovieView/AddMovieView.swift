@@ -17,12 +17,20 @@ struct AddMovieView: View {
     @State private var overview = ""
     @State private var genre = ""
     
-    
     @State private var showAddSuccessAlert = false
     @State private var showAddFailAlert = false
     
+    func addMovieHandler() {
+        let addMovieSuccess = movieVM.addMovie(movie: Movie(id: UUID().uuidString, title: movieTitle, overview: overview))
+        if addMovieSuccess {
+            showAddSuccessAlert = true
+        } else {
+            showAddFailAlert = true
+        }
+    }
+    
+    // MARK: - FORM VIEW
     var body: some View {
-        
             
             NavigationView {
                 
@@ -39,17 +47,14 @@ struct AddMovieView: View {
                         TextEditor(text: $overview)
                     }
                     
+                    Section(header: SectionHeader("Overview")) {
+                        TextEditor(text: $overview)
+                    }
+                    
                     Button("Add movie") {
-                        let addMovieSuccess = movieVM.addMovie(movie: Movie(id: UUID().uuidString, title: movieTitle, overview: overview))
-                        if addMovieSuccess {
-                            showAddSuccessAlert = true
-                        } else {
-                            showAddFailAlert = true
-                        }
+                        addMovieHandler()
                     }
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                    
-                    
                     
                     
                     //                    Section(header: Text("Movie")
@@ -83,41 +88,11 @@ struct AddMovieView: View {
             Button("OK", role: .cancel) { }
         }
         
-        
     }
 }
 
 struct AddMovieView_Previews: PreviewProvider {
     static var previews: some View {
         AddMovieView()
-    }
-}
-
-struct FormRowView: View {
-    // MARK: - Properties struct
-    var firstItem: String
-    var secondItem: String
-    
-    var body: some View {
-        HStack {
-            Text(firstItem)
-                .foregroundColor(Color.gray)
-            Spacer()
-            Text(secondItem)
-        }
-    }
-}
-
-struct SectionHeader: View {
-    var header: String
-    
-    init(_ header: String) {
-        self.header = header
-    }
-    
-    var body: some View {
-        Text("\(self.header) *")
-            .font(.headline)
-            .bold()
     }
 }

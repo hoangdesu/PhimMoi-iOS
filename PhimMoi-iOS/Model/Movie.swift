@@ -8,11 +8,13 @@
 import Foundation
 
 struct Movie: Identifiable {
-    var id: String
+    var id = UUID().uuidString
     var title: String
-    var poster: String?
+    var posterPath: String?
     var overview: String?
     var releaseYear: String?
     var genre: String?
-    var trailer: String?
+    var trailerLink: String?
+    var language: String?
+    var length: String?
 }
