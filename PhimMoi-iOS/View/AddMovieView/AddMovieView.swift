@@ -30,7 +30,7 @@ struct AddMovieView: View {
     let genres = ["Action", "Comedy", "Fantasy", "Horror", "Adventure", "Mystery", "Drama", "Science Fiction", "Thriller", "Romance", "Musical"]
     
     // PhotoPicker
-//    @State private var selectedImageData: Data? = nil
+    //    @State private var selectedImageData: Data? = nil
     @State private var showImagePickerSheet = false
     @State private var inputImage = UIImage(named: "poster-placeholder")
     @State private var image: Image?
@@ -76,7 +76,11 @@ struct AddMovieView: View {
     }
     
     func uploadImageHandler() {
-        movieVM.uploadImage(data: inputImage!)
+        guard let inputImage = self.inputImage else { return }
+        
+        print("Inside updload image handler, has image size: \(inputImage.size)")
+        
+        movieVM.uploadImage(image: inputImage)
         
     }
     
@@ -103,13 +107,25 @@ struct AddMovieView: View {
                 }
                 
                 Section(header: SectionHeader("Poster")) {
-                    Image(uiImage: inputImage!)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                        .onTapGesture {
-                            showImagePickerSheet = true
-                        }
+                    if let inputImage = self.inputImage {
+                        Image(uiImage: inputImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                            .onTapGesture {
+                                showImagePickerSheet = true
+                            }
+                    } else {
+                        Image("poster-placeholder")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                            .onTapGesture {
+                                showImagePickerSheet = true
+                            }
+                    }
+                        
+                    
                     Button("Upload image (TEST)") {
                         uploadImageHandler()
                     }
