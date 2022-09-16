@@ -134,6 +134,9 @@ struct AddMovieView: View {
                     
                     if movieVM.mockPosterURL != "" {
                         KFImage(URL(string: movieVM.mockPosterURL)!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200)
                     }
                     
                 
