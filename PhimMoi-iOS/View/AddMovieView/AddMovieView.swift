@@ -25,6 +25,9 @@ struct AddMovieView: View {
     @State private var showAddSuccessAlert = false
     @State private var showAddFailAlert = false
     
+    // Pickers
+    let genres = ["Action", "Comedy", "Fantasy", "Horror", "Adventure", "Mystery", "Drama", "Science Fiction", "Thriller", "Romance", "Musical"]
+    
     func addMovieHandler() {
         let newMovie = Movie(id: UUID().uuidString,
                              title: inpTitle,
@@ -48,68 +51,77 @@ struct AddMovieView: View {
     
     // MARK: - FORM VIEW
     var body: some View {
+        
+        NavigationView {
             
-            NavigationView {
-                
-                Form {
-                    Section(header: SectionHeader("Movie Title")) {
-                        TextEditor(text: $inpTitle)
-                    }
-                    
-                    Section(header: SectionHeader("Genre")) {
-                        TextField("Add genre", text: $inpGenre)
-                    }
-                    
-                    
-                    Section(header: SectionHeader("Poster")) {
-                        TextEditor(text: $inpPosterPath)
-                    }
-                    
-                    Section(header: SectionHeader("Release year")) {
-                        TextEditor(text: $inpReleaseYear)
-                    }
-                    
-                    Section(header: SectionHeader("Trailer link (Youtube)")) {
-                        TextEditor(text: $inpTrailerLink)
-                    }
-                    
-                    Section(header: SectionHeader("Language")) {
-                        TextEditor(text: $inpLanguage)
-                    }
-                    
-                    Section(header: SectionHeader("Length")) {
-                        TextEditor(text: $inpLength)
-                    }
-                    
-                    Button("Add movie") {
-                        addMovieHandler()
-                    }
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                    
-                    
-                    //                    Section(header: Text("Movie")
-                    //                        .fontWeight(.bold)) {
-                    //                            FormRowView(firstItem: "Username", secondItem: "\(1)")
-                    //                            Picker("Music", selection: $selection) {
-                    //                                ForEach(2010...2022, id: \.self) {
-                    //                                    Text(String($0))
-                    //                                }
-                    //                            }
-                    //                            .pickerStyle(WheelPickerStyle())
-                    //
-                    //                            DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
-                    //                                Text("Select a date")
-                    //                            }
-                    //                            .pickerStyle(WheelPickerStyle())
-                    //
-                    //                            Text("Date is \(birthDate.formatted(date: .long, time: .omitted))")
-                    //
-                    //                        }
-                    //                }
-                    //                .font(.system(.body, design: .rounded))
+            Form {
+                Section(header: SectionHeader("Movie Title")) {
+                    TextEditor(text: $inpTitle)
                 }
                 
-                .navigationTitle("Add new movie")
+                Section(header: SectionHeader("Overview")) {
+                    TextEditor(text: $inpOverview)
+                }
+                
+                Section(header: SectionHeader("Genre")) {
+                    //                        TextField("Add genre", text: $inpGenre)
+                    Picker("Select genre", selection: $inpGenre) {
+                        ForEach(genres, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                }
+                
+                Section(header: SectionHeader("Poster")) {
+                    TextEditor(text: $inpPosterPath)
+                }
+                
+                Section(header: SectionHeader("Release year")) {
+                    TextEditor(text: $inpReleaseYear)
+                }
+                
+                Section(header: SectionHeader("Trailer link (Youtube)")) {
+                    TextEditor(text: $inpTrailerLink)
+                }
+                
+                Section(header: SectionHeader("Language")) {
+                    TextEditor(text: $inpLanguage)
+                }
+                
+                Section(header: SectionHeader("Length")) {
+                    TextEditor(text: $inpLength)
+                }
+                
+                
+                Button("Add movie") {
+                    addMovieHandler()
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                
+                
+                //                    Section(header: Text("Movie")
+                //                        .fontWeight(.bold)) {
+                //                            FormRowView(firstItem: "Username", secondItem: "\(1)")
+                //                            Picker("Music", selection: $selection) {
+                //                                ForEach(2010...2022, id: \.self) {
+                //                                    Text(String($0))
+                //                                }
+                //                            }
+                //                            .pickerStyle(WheelPickerStyle())
+                //
+                //                            DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
+                //                                Text("Select a date")
+                //                            }
+                //                            .pickerStyle(WheelPickerStyle())
+                //
+                //                            Text("Date is \(birthDate.formatted(date: .long, time: .omitted))")
+                //
+                //                        }
+                //                }
+                //                .font(.system(.body, design: .rounded))
+            }
+            
+            .navigationTitle("Add new movie")
         } // NavView
         .alert("Success", isPresented: $showAddSuccessAlert) {
             Button("OK", role: .cancel) { }

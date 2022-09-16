@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    
     var body: some View {
         ZStack {
             // MARK: - BACKGROUND
             LinearGradient(gradient: Gradient(colors: [Color("MovieRed"), Color("MovieDarkRed")]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
-            
             
         }
     }
