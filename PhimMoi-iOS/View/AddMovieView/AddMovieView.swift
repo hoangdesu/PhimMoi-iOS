@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PhotosUI
+import Kingfisher
 
 struct AddMovieView: View {
     
@@ -78,8 +79,6 @@ struct AddMovieView: View {
     func uploadImageHandler() {
         guard let inputImage = self.inputImage else { return }
         
-        print("Inside updload image handler, has image size: \(inputImage.size)")
-        
         movieVM.uploadImage(image: inputImage)
         
     }
@@ -126,9 +125,18 @@ struct AddMovieView: View {
                     }
                         
                     
+                    // FOR TESTING ONLY
                     Button("Upload image (TEST)") {
                         uploadImageHandler()
                     }
+                    
+                    Text("Recently upload photo from Firebase")
+                    
+                    if movieVM.mockPosterURL != "" {
+                        KFImage(URL(string: movieVM.mockPosterURL)!)
+                    }
+                    
+                
                 }
                 
                 Section(header: SectionHeader("Release year")) {

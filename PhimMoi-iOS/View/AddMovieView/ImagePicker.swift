@@ -4,6 +4,7 @@
 //
 //  Created by Hoang, Nguyen Quoc on 16/09/2022.
 //
+//  source: https://www.hackingwithswift.com/books/ios-swiftui/importing-an-image-into-swiftui-using-phpickerviewcontroller
 
 import SwiftUI
 

@@ -23,6 +23,8 @@ class MovieViewModel: ObservableObject {
     // Properties
     @Published var movies = [Movie]()
     
+    @Published var mockPosterURL: String = ""
+    
     let db = Firestore.firestore()
     let storage = Storage.storage()
     
@@ -110,13 +112,14 @@ class MovieViewModel: ObservableObject {
 //            }
 //        }
         
-//        guard image != nil else { return }
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
         
         guard let imageData = image.jpegData(compressionQuality: 0.8) else { return }
         
         let fileRef = storageRef.child("posters/\(UUID().uuidString).jpg")
         
-        let uploadTask = fileRef.putData(imageData, metadata: nil) { metadata, err in
+        let uploadTask = fileRef.putData(imageData, metadata: metadata) { metadata, err in
 //            if let err = err {
 //                print("UPLOAD ERROR: \(err)")
 //                return
@@ -127,6 +130,11 @@ class MovieViewModel: ObservableObject {
 
                 guard let url = url else { return }
                 print(">>> UPLOAD IMAGE URL: \(url.absoluteString)")
+                
+                print(">>> BASE URL: \(String(describing: url.baseURL))")
+                
+                self.mockPosterURL = url.absoluteString
+                
             }
         }
     }

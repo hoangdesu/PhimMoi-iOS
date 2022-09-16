@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2903C28528D51A8C00F0ED20 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2903C28428D51A8C00F0ED20 /* Kingfisher */; };
 		2935967828D3012C0056A195 /* HomescreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935967728D3012C0056A195 /* HomescreenView.swift */; };
 		2935967B28D308D40056A195 /* AddMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935967A28D308D40056A195 /* AddMovieView.swift */; };
 		2935968128D30CB80056A195 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935968028D30CB80056A195 /* UserView.swift */; };
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2903C28528D51A8C00F0ED20 /* Kingfisher in Frameworks */,
 				29C4988D28C6A50400363569 /* FirebaseDatabase in Frameworks */,
 				29C4989128C6A50400363569 /* FirebaseStorage in Frameworks */,
 				2935968428D323FD0056A195 /* YouTubePlayerKit in Frameworks */,
@@ -201,6 +203,7 @@
 				29C4988E28C6A50400363569 /* FirebaseFirestore */,
 				29C4989028C6A50400363569 /* FirebaseStorage */,
 				2935968328D323FD0056A195 /* YouTubePlayerKit */,
+				2903C28428D51A8C00F0ED20 /* Kingfisher */,
 			);
 			productName = "PhimMoi-iOS";
 			productReference = 29C4987528C6A01700363569 /* PhimMoi-iOS.app */;
@@ -233,6 +236,7 @@
 			packageReferences = (
 				29C4988928C6A50400363569 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2935968228D323FD0056A195 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+				2903C28328D51A8C00F0ED20 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 29C4987628C6A01700363569 /* Products */;
 			projectDirPath = "";
@@ -402,7 +406,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PhimMoi-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = A397Q3FW3Q;
+				DEVELOPMENT_TEAM = AHZYNUTR8C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -416,7 +420,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.TaylorSwiftUI.PhimMoi-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TaylorSwiftUI.PhimMoi-iOS-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -432,7 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PhimMoi-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = A397Q3FW3Q;
+				DEVELOPMENT_TEAM = AHZYNUTR8C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -446,7 +450,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.TaylorSwiftUI.PhimMoi-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TaylorSwiftUI.PhimMoi-iOS-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -478,6 +482,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2903C28328D51A8C00F0ED20 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		2935968228D323FD0056A195 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit";
@@ -497,6 +509,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2903C28428D51A8C00F0ED20 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2903C28328D51A8C00F0ED20 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		2935968328D323FD0056A195 /* YouTubePlayerKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2935968228D323FD0056A195 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
