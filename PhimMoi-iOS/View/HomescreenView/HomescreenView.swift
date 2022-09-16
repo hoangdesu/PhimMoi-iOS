@@ -18,7 +18,7 @@ struct HomescreenView: View {
     
     @EnvironmentObject var movieVM: MovieViewModel
     
-    @State var selectedScreen: Screen = .addMovieView
+    @State var selectedScreen: Screen = .welcomeView
     
     var body: some View {
         

@@ -25,6 +25,7 @@
 		29C4989328C6A57A00363569 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29C4989228C6A57A00363569 /* GoogleService-Info.plist */; };
 		29C4989528C6A71E00363569 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4989428C6A71E00363569 /* Movie.swift */; };
 		F44729D228D0514D0076F0C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44729D128D0514D0076F0C5 /* WelcomeView.swift */; };
+		F47E9CB628D45B95005C89E4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E9CB528D45B95005C89E4 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		29C4989428C6A71E00363569 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		29C4989628C6AB4A00363569 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F44729D128D0514D0076F0C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		F47E9CB528D45B95005C89E4 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				F44729D128D0514D0076F0C5 /* WelcomeView.swift */,
+				F47E9CB528D45B95005C89E4 /* Test.swift */,
 			);
 			path = WelcomeView;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				2935968B28D38E930056A195 /* SessionViewModel.swift in Sources */,
 				29C4987928C6A01700363569 /* PhimMoi_iOSApp.swift in Sources */,
 				2935968128D30CB80056A195 /* UserView.swift in Sources */,
+				F47E9CB628D45B95005C89E4 /* Test.swift in Sources */,
 				29C4989528C6A71E00363569 /* Movie.swift in Sources */,
 				2935968928D38E480056A195 /* MovieViewModel.swift in Sources */,
 				2935967828D3012C0056A195 /* HomescreenView.swift in Sources */,
