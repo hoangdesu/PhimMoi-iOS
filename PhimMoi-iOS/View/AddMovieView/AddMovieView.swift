@@ -11,18 +11,35 @@ struct AddMovieView: View {
     
     @EnvironmentObject var movieVM: MovieViewModel
     
-    @State private var movieTitle = ""
-    @State var selection = ""
-    @State var birthDate = Date()
-    @State private var overview = ""
-    @State private var genre = ""
+    // Movie states
+    @State private var inpTitle = ""
+    @State private var inpPosterPath = ""
+    @State private var inpOverview = ""
+    @State private var inpReleaseYear = ""
+    @State private var inpGenre = ""
+    @State private var inpTrailerLink = ""
+    @State private var inpLanguage = ""
+    @State private var inpLength = ""
     
+    // Alert states
     @State private var showAddSuccessAlert = false
     @State private var showAddFailAlert = false
     
     func addMovieHandler() {
-        let addMovieSuccess = movieVM.addMovie(movie: Movie(id: UUID().uuidString, title: movieTitle, overview: overview))
-        if addMovieSuccess {
+        let newMovie = Movie(id: UUID().uuidString,
+                             title: inpTitle,
+                             posterPath: inpPosterPath,
+                             overview: inpOverview,
+                             releaseYear: inpReleaseYear,
+                             genre: inpGenre,
+                             trailerLink: inpTrailerLink,
+                             language: inpLanguage,
+                             length: inpLength)
+        
+        let addMovieSucceeded = movieVM.addMovie(movie: newMovie)
+        
+        // display add movie operation status
+        if addMovieSucceeded {
             showAddSuccessAlert = true
         } else {
             showAddFailAlert = true
@@ -36,19 +53,32 @@ struct AddMovieView: View {
                 
                 Form {
                     Section(header: SectionHeader("Movie Title")) {
-                        TextField("Add movie title", text: $movieTitle)
+                        TextEditor(text: $inpTitle)
                     }
                     
-                    Section(header: SectionHeader("Movie Genre")) {
-                        TextField("Add genre", text: $genre)
+                    Section(header: SectionHeader("Genre")) {
+                        TextField("Add genre", text: $inpGenre)
                     }
                     
-                    Section(header: SectionHeader("Overview")) {
-                        TextEditor(text: $overview)
+                    
+                    Section(header: SectionHeader("Poster")) {
+                        TextEditor(text: $inpPosterPath)
                     }
                     
-                    Section(header: SectionHeader("Overview")) {
-                        TextEditor(text: $overview)
+                    Section(header: SectionHeader("Release year")) {
+                        TextEditor(text: $inpReleaseYear)
+                    }
+                    
+                    Section(header: SectionHeader("Trailer link (Youtube)")) {
+                        TextEditor(text: $inpTrailerLink)
+                    }
+                    
+                    Section(header: SectionHeader("Language")) {
+                        TextEditor(text: $inpLanguage)
+                    }
+                    
+                    Section(header: SectionHeader("Length")) {
+                        TextEditor(text: $inpLength)
                     }
                     
                     Button("Add movie") {
