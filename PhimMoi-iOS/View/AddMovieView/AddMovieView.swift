@@ -75,6 +75,11 @@ struct AddMovieView: View {
         image = Image(uiImage: inputImage)
     }
     
+    func uploadImageHandler() {
+        movieVM.uploadImage(data: inputImage!)
+        
+    }
+    
     // MARK: - FORM VIEW
     var body: some View {
         
@@ -101,11 +106,13 @@ struct AddMovieView: View {
                     Image(uiImage: inputImage!)
                         .resizable()
                         .scaledToFit()
-//                        .aspectRatio(contentMode: .fill)
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                         .onTapGesture {
                             showImagePickerSheet = true
                         }
+                    Button("Upload image (TEST)") {
+                        uploadImageHandler()
+                    }
                 }
                 
                 Section(header: SectionHeader("Release year")) {
