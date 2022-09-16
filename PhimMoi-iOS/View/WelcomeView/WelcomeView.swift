@@ -13,6 +13,7 @@ struct WelcomeView: View {
             // MARK: - BACKGROUND
             LinearGradient(gradient: Gradient(colors: [Color("MovieRed"), Color("MovieDarkRed")]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
+            
         }
     }
 }

@@ -38,7 +38,6 @@ struct MovieListView: View {
         }
     }
     
-    
 }
 
 struct MovieListView_Previews: PreviewProvider {
