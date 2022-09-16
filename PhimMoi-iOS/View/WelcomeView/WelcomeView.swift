@@ -35,6 +35,7 @@ struct WelcomeView: View {
                                     FeatureCard()
                                 }.padding(20)
                             }
+                            CategoryView()
                         }
                     }.navigationTitle("")
                     .navigationBarTitleDisplayMode(.inline)
@@ -45,13 +46,11 @@ struct WelcomeView: View {
                                 Text("PhimMoi")
                                     .bold()
                                 Spacer()
-                                Button(action:{ self.search = true }) { Image("search") }
+                                Button(action:{ self.search = true }) { Image(systemName: "magnifyingglass") }
                             }
                         }
                     }
                 }
-                
-                
             }
         }
         
