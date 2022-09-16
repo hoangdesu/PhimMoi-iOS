@@ -24,6 +24,7 @@
 		29C4989128C6A50400363569 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 29C4989028C6A50400363569 /* FirebaseStorage */; };
 		29C4989328C6A57A00363569 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29C4989228C6A57A00363569 /* GoogleService-Info.plist */; };
 		29C4989528C6A71E00363569 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4989428C6A71E00363569 /* Movie.swift */; };
+		7F12C42328D460CA00D9B9AB /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12C42228D460CA00D9B9AB /* SectionHeader.swift */; };
 		F44729D228D0514D0076F0C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44729D128D0514D0076F0C5 /* WelcomeView.swift */; };
 		F47E9CB628D45B95005C89E4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E9CB528D45B95005C89E4 /* Test.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		29C4989228C6A57A00363569 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29C4989428C6A71E00363569 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		29C4989628C6AB4A00363569 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7F12C42228D460CA00D9B9AB /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		F44729D128D0514D0076F0C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		F47E9CB528D45B95005C89E4 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				2935967A28D308D40056A195 /* AddMovieView.swift */,
+				7F12C42228D460CA00D9B9AB /* SectionHeader.swift */,
 			);
 			path = AddMovieView;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				29C4989528C6A71E00363569 /* Movie.swift in Sources */,
 				2935968928D38E480056A195 /* MovieViewModel.swift in Sources */,
 				2935967828D3012C0056A195 /* HomescreenView.swift in Sources */,
+				7F12C42328D460CA00D9B9AB /* SectionHeader.swift in Sources */,
 				F44729D228D0514D0076F0C5 /* WelcomeView.swift in Sources */,
 				2935967B28D308D40056A195 /* AddMovieView.swift in Sources */,
 			);

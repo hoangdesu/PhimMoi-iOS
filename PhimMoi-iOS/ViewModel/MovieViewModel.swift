@@ -48,26 +48,34 @@ class MovieViewModel: ObservableObject {
     
     func addMovie(movie: Movie) -> Bool {
         let db = Firestore.firestore()
-        let ref = db.collection(DB_MOVIES_COLLECTION).document(movie.title)
+        let ref = db.collection(DB_MOVIES_COLLECTION).document(movie.id)
         
         var err = false
         
-        let values = [
+        let movieObj = [
             "id": movie.id,
             "title": movie.title,
-            "overview": movie.overview ?? "n/a"
+            "overview": movie.overview ?? "",
+            "posterPath": movie.posterPath ?? "",
+            "releaseYear": movie.releaseYear ?? "",
+            "genre": movie.genre ?? "",
+            "trailerLink": movie.trailerLink ?? "",
+            "language": movie.language ?? "",
+            "length": movie.length ?? "",
         ]
         
-        ref.setData(values) { error in
+        ref.setData(movieObj) { error in
             if let error = error {
                 print(error.localizedDescription)
                 err = true
             }
         }
         
+        // return true when add operation is successful
         if err {
             return false
         }
+        
         return true
     }
     
