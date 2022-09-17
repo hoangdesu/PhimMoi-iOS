@@ -17,7 +17,7 @@ struct WelcomeView: View {
                 .edgesIgnoringSafeArea(.all)
             NavigationView {
                 ZStack {
-                    ScrollView {
+                    ScrollView(showsIndicators: false) {
                         VStack {
                             NavigationLink(destination: SearchView(),
                                                            isActive: self.$search)

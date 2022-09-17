@@ -33,6 +33,7 @@
 		F437470328D4B17200BE6C01 /* PosterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437470228D4B17200BE6C01 /* PosterCard.swift */; };
 		F437470628D4B59100BE6C01 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437470528D4B59100BE6C01 /* DetailView.swift */; };
 		F44729D228D0514D0076F0C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44729D128D0514D0076F0C5 /* WelcomeView.swift */; };
+		F48FD72228D5B53500C35A9A /* SmallDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD72128D5B53500C35A9A /* SmallDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		F437470228D4B17200BE6C01 /* PosterCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCard.swift; sourceTree = "<group>"; };
 		F437470528D4B59100BE6C01 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		F44729D128D0514D0076F0C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		F48FD72128D5B53500C35A9A /* SmallDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				F437470528D4B59100BE6C01 /* DetailView.swift */,
+				F48FD72128D5B53500C35A9A /* SmallDetail.swift */,
 			);
 			path = MovieDetail;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				F437470128D4B02B00BE6C01 /* CategoryView.swift in Sources */,
 				F43746FF28D49D8200BE6C01 /* SearchView.swift in Sources */,
 				7F12C42328D460CA00D9B9AB /* SectionHeader.swift in Sources */,
+				F48FD72228D5B53500C35A9A /* SmallDetail.swift in Sources */,
 				F44729D228D0514D0076F0C5 /* WelcomeView.swift in Sources */,
 				F43746FA28D494A100BE6C01 /* FeatureCard.swift in Sources */,
 				2935967B28D308D40056A195 /* AddMovieView.swift in Sources */,
