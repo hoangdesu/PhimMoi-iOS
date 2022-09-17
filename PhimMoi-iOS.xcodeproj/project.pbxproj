@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2935967828D3012C0056A195 /* HomescreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935967728D3012C0056A195 /* HomescreenView.swift */; };
+		2935967828D3012C0056A195 /* AppScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935967728D3012C0056A195 /* AppScreenView.swift */; };
 		2935967B28D308D40056A195 /* AddMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935967A28D308D40056A195 /* AddMovieView.swift */; };
 		2935968128D30CB80056A195 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935968028D30CB80056A195 /* UserView.swift */; };
 		2935968428D323FD0056A195 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2935968328D323FD0056A195 /* YouTubePlayerKit */; };
@@ -34,12 +34,12 @@
 		F437470128D4B02B00BE6C01 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437470028D4B02B00BE6C01 /* CategoryView.swift */; };
 		F437470328D4B17200BE6C01 /* PosterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437470228D4B17200BE6C01 /* PosterCard.swift */; };
 		F437470628D4B59100BE6C01 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437470528D4B59100BE6C01 /* DetailView.swift */; };
-		F44729D228D0514D0076F0C5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44729D128D0514D0076F0C5 /* WelcomeView.swift */; };
+		F44729D228D0514D0076F0C5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44729D128D0514D0076F0C5 /* HomeView.swift */; };
 		F48FD72228D5B53500C35A9A /* SmallDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD72128D5B53500C35A9A /* SmallDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2935967728D3012C0056A195 /* HomescreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenView.swift; sourceTree = "<group>"; };
+		2935967728D3012C0056A195 /* AppScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreenView.swift; sourceTree = "<group>"; };
 		2935967A28D308D40056A195 /* AddMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieView.swift; sourceTree = "<group>"; };
 		2935968028D30CB80056A195 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		2935968828D38E480056A195 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		F437470028D4B02B00BE6C01 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		F437470228D4B17200BE6C01 /* PosterCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCard.swift; sourceTree = "<group>"; };
 		F437470528D4B59100BE6C01 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		F44729D128D0514D0076F0C5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		F44729D128D0514D0076F0C5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F48FD72128D5B53500C35A9A /* SmallDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,24 +83,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2935967528D300E60056A195 /* WelcomeView */ = {
+		2935967528D300E60056A195 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				F44729D128D0514D0076F0C5 /* WelcomeView.swift */,
+				F44729D128D0514D0076F0C5 /* HomeView.swift */,
 				F43746F928D494A100BE6C01 /* FeatureCard.swift */,
 				F43746FE28D49D8200BE6C01 /* SearchView.swift */,
 				F437470028D4B02B00BE6C01 /* CategoryView.swift */,
 				F437470228D4B17200BE6C01 /* PosterCard.swift */,
 			);
-			path = WelcomeView;
+			path = HomeView;
 			sourceTree = "<group>";
 		};
-		2935967628D301070056A195 /* HomescreenView */ = {
+		2935967628D301070056A195 /* AppScreenView */ = {
 			isa = PBXGroup;
 			children = (
-				2935967728D3012C0056A195 /* HomescreenView.swift */,
+				2935967728D3012C0056A195 /* AppScreenView.swift */,
 			);
-			path = HomescreenView;
+			path = AppScreenView;
 			sourceTree = "<group>";
 		};
 		2935967928D308670056A195 /* AddMovieView */ = {
@@ -209,11 +209,11 @@
 			children = (
 				29CF82C528D5FA8D00C6FB11 /* SplashScreen */,
 				F437470428D4B57D00BE6C01 /* MovieDetail */,
-				2935967628D301070056A195 /* HomescreenView */,
+				2935967628D301070056A195 /* AppScreenView */,
 				2935967928D308670056A195 /* AddMovieView */,
 				2935967C28D308FA0056A195 /* MovieListView */,
 				2935967F28D30CA70056A195 /* UserView */,
-				2935967528D300E60056A195 /* WelcomeView */,
+				2935967528D300E60056A195 /* HomeView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,14 +312,14 @@
 				29CF82C728D5FAAD00C6FB11 /* SplashScreenView.swift in Sources */,
 				F437470328D4B17200BE6C01 /* PosterCard.swift in Sources */,
 				2935968928D38E480056A195 /* MovieViewModel.swift in Sources */,
-				2935967828D3012C0056A195 /* HomescreenView.swift in Sources */,
+				2935967828D3012C0056A195 /* AppScreenView.swift in Sources */,
 				F437470628D4B59100BE6C01 /* DetailView.swift in Sources */,
 				F437470128D4B02B00BE6C01 /* CategoryView.swift in Sources */,
 				29CF82C428D5F67100C6FB11 /* AppStateViewModel.swift in Sources */,
 				F43746FF28D49D8200BE6C01 /* SearchView.swift in Sources */,
 				7F12C42328D460CA00D9B9AB /* SectionHeader.swift in Sources */,
 				F48FD72228D5B53500C35A9A /* SmallDetail.swift in Sources */,
-				F44729D228D0514D0076F0C5 /* WelcomeView.swift in Sources */,
+				F44729D228D0514D0076F0C5 /* HomeView.swift in Sources */,
 				F43746FA28D494A100BE6C01 /* FeatureCard.swift in Sources */,
 				2935967B28D308D40056A195 /* AddMovieView.swift in Sources */,
 			);

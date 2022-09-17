@@ -7,25 +7,25 @@
 
 import SwiftUI
 
-enum Screen {
-    case welcomeView
-    case movieListView
-    case addMovieView
-    case userView
-}
 
-struct HomescreenView: View {
+struct AppScreenView: View {
     
     @EnvironmentObject var movieVM: MovieViewModel
+    
+    enum Screen {
+        case welcomeView
+        case movieListView
+        case addMovieView
+        case userView
+    }
+    
     
     @State var selectedScreen: Screen = .welcomeView
     
     var body: some View {
         
-        // TODO: - Showing items for testing. Remove extras and only show tab items for Homescreen in production
-        
         TabView(selection: $selectedScreen) {
-            WelcomeView()
+            HomeView()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
@@ -35,14 +35,14 @@ struct HomescreenView: View {
             MovieListView()
                 .tabItem {
                     Image(systemName: "heart")
-                    Text("MovieList")
+                    Text("Movie List")
                 }
                 .tag(Screen.movieListView)
             
             AddMovieView()
                 .tabItem {
                     Image(systemName: "plus.square")
-                    Text("Add movie")
+                    Text("Add Movie")
                 }
                 .tag(Screen.addMovieView)
             
@@ -53,22 +53,15 @@ struct HomescreenView: View {
                 }
                 .tag(Screen.userView)
             
-            // put any view here for testing
-            UserView()
-                .tabItem {
-                    Image(systemName: "circle")
-                    Text("Test")
-                }
-                .tag(Screen.userView)
         }
         .accentColor(.blue)
-        .transition(.slide)
+        .transition(.opacity)
     }
 }
 
-struct HomescreenView_Previews: PreviewProvider {
+struct AppScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        HomescreenView()
+        AppScreenView()
             .environmentObject(MovieViewModel.shared)
     }
 }
