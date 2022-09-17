@@ -24,6 +24,8 @@
 		29C4989128C6A50400363569 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 29C4989028C6A50400363569 /* FirebaseStorage */; };
 		29C4989328C6A57A00363569 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29C4989228C6A57A00363569 /* GoogleService-Info.plist */; };
 		29C4989528C6A71E00363569 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4989428C6A71E00363569 /* Movie.swift */; };
+		29CF82C428D5F67100C6FB11 /* AppStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF82C328D5F67100C6FB11 /* AppStateViewModel.swift */; };
+		29CF82C728D5FAAD00C6FB11 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF82C628D5FAAD00C6FB11 /* SplashScreenView.swift */; };
 		7F12C42328D460CA00D9B9AB /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12C42228D460CA00D9B9AB /* SectionHeader.swift */; };
 		7F12C42528D49B4E00D9B9AB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12C42428D49B4E00D9B9AB /* ImagePicker.swift */; };
 		F43746FA28D494A100BE6C01 /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43746F928D494A100BE6C01 /* FeatureCard.swift */; };
@@ -51,6 +53,8 @@
 		29C4989228C6A57A00363569 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29C4989428C6A71E00363569 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		29C4989628C6AB4A00363569 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		29CF82C328D5F67100C6FB11 /* AppStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateViewModel.swift; sourceTree = "<group>"; };
+		29CF82C628D5FAAD00C6FB11 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		7F12C42228D460CA00D9B9AB /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		7F12C42428D49B4E00D9B9AB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F43746F928D494A100BE6C01 /* FeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			children = (
 				2935968828D38E480056A195 /* MovieViewModel.swift */,
 				2935968A28D38E930056A195 /* SessionViewModel.swift */,
+				29CF82C328D5F67100C6FB11 /* AppStateViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -158,10 +163,10 @@
 				29C4987E28C6A01800363569 /* Preview Content */,
 				F44729CF28D0512B0076F0C5 /* View */,
 				2935968728D38E1D0056A195 /* ViewModel */,
-				29C4987C28C6A01800363569 /* Assets.xcassets */,
 				29C4987A28C6A01700363569 /* ContentView.swift */,
-				29C4989228C6A57A00363569 /* GoogleService-Info.plist */,
 				29C4987828C6A01700363569 /* PhimMoi_iOSApp.swift */,
+				29C4989228C6A57A00363569 /* GoogleService-Info.plist */,
+				29C4987C28C6A01800363569 /* Assets.xcassets */,
 			);
 			path = "PhimMoi-iOS";
 			sourceTree = "<group>";
@@ -182,6 +187,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		29CF82C528D5FA8D00C6FB11 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				29CF82C628D5FAAD00C6FB11 /* SplashScreenView.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
 		F437470428D4B57D00BE6C01 /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +207,7 @@
 		F44729CF28D0512B0076F0C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				29CF82C528D5FA8D00C6FB11 /* SplashScreen */,
 				F437470428D4B57D00BE6C01 /* MovieDetail */,
 				2935967628D301070056A195 /* HomescreenView */,
 				2935967928D308670056A195 /* AddMovieView */,
@@ -295,11 +309,13 @@
 				29C4987928C6A01700363569 /* PhimMoi_iOSApp.swift in Sources */,
 				2935968128D30CB80056A195 /* UserView.swift in Sources */,
 				29C4989528C6A71E00363569 /* Movie.swift in Sources */,
+				29CF82C728D5FAAD00C6FB11 /* SplashScreenView.swift in Sources */,
 				F437470328D4B17200BE6C01 /* PosterCard.swift in Sources */,
 				2935968928D38E480056A195 /* MovieViewModel.swift in Sources */,
 				2935967828D3012C0056A195 /* HomescreenView.swift in Sources */,
 				F437470628D4B59100BE6C01 /* DetailView.swift in Sources */,
 				F437470128D4B02B00BE6C01 /* CategoryView.swift in Sources */,
+				29CF82C428D5F67100C6FB11 /* AppStateViewModel.swift in Sources */,
 				F43746FF28D49D8200BE6C01 /* SearchView.swift in Sources */,
 				7F12C42328D460CA00D9B9AB /* SectionHeader.swift in Sources */,
 				F48FD72228D5B53500C35A9A /* SmallDetail.swift in Sources */,

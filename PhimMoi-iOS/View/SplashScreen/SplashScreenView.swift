@@ -1,15 +1,13 @@
 //
-//  ContentView.swift
+//  SplashScreenView.swift
 //  PhimMoi-iOS
 //
-//  Created by ドロケ on 06/09/2022.
+//  Created by ドロケ on 17/09/2022.
 //
 
 import SwiftUI
-import Firebase
 
-struct ContentView: View {
-    
+struct SplashScreenView: View {
     @EnvironmentObject var appStateVM: AppStateViewModel
     
     var body: some View {
@@ -17,11 +15,10 @@ struct ContentView: View {
             appStateVM.appState = .homescreen
         }
     }
-        
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SplashScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SplashScreenView()
     }
 }
