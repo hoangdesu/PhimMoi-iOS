@@ -57,13 +57,22 @@ struct HomeView: View {
                 .toolbar {
                     ToolbarItem(placement: .principal){
                         HStack {
+                            Text("")
+                                .frame(width: 30)
+                            
                             Spacer()
-                            Text("PhimMoi")
-                                .bold()
+                            
+                            Image("logo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 80)
+                            
                             Spacer()
+                            
                             Button(action: { self.search = true }) {
                                 Image(systemName: "magnifyingglass")
                             }
+                            .frame(width: 30)
                         }
                     }
                 }

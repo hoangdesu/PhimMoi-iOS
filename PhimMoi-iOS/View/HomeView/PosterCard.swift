@@ -22,8 +22,8 @@ struct PosterCard: View {
                     .aspectRatio(contentMode: .fit)
             }
         }
-        .frame(width: 150, height: 220)
-        .cornerRadius(15)
+        .frame(width: 140, height: 210)
+        .cornerRadius(16)
         .shadow(color: Color.gray, radius: 12, x: 0, y: 8)
         .padding(.bottom, 15)
         .onTapGesture {

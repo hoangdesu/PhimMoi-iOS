@@ -8,14 +8,15 @@
 import SwiftUI
 import Kingfisher
 
-
 struct SearchView: View {
     @EnvironmentObject var movieVM: MovieViewModel
+    
     @State var showDetail = false
     @State private var searchText = ""
+    
     var body: some View {
         List {
-            ForEach(filteredMovie) { (movies:Movie) in
+            ForEach(filteredMovie, id: \.id) { (movies:Movie) in
                 HStack{
                     KFImage(URL(string: mockMovie.posterPath!)!)
                         .resizable()
@@ -37,9 +38,10 @@ struct SearchView: View {
                     DetailView(movie: mockMovie)
                 }
             }
-        }.navigationBarTitleDisplayMode(.inline)
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search")
-            
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search")
+        
         
     }
     
@@ -47,12 +49,12 @@ struct SearchView: View {
         if searchText.isEmpty {
             return movieVM.movies
         } else {
-            return movieVM.movies.filter{
+            return movieVM.movies.filter {
                 $0.title.localizedCaseInsensitiveContains(searchText)
-//                || $0.language!.localizedCaseInsensitiveContains(searchText) ||
-//                $0.releaseYear!.localizedCaseInsensitiveContains(searchText) ||
-//                $0.genre!.localizedCaseInsensitiveContains(searchText)  ||
-//                $0.length!.localizedCaseInsensitiveContains(searchText)
+                //                || $0.language!.localizedCaseInsensitiveContains(searchText) ||
+                //                $0.releaseYear!.localizedCaseInsensitiveContains(searchText) ||
+                //                $0.genre!.localizedCaseInsensitiveContains(searchText)  ||
+                //                $0.length!.localizedCaseInsensitiveContains(searchText)
             }
         }
     }
