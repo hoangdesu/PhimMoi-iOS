@@ -16,38 +16,30 @@ struct MovieListView: View {
     
     var body: some View {
         
-            NavigationView {
-                List(movieVM.movies, id: \.id) { movie in
+        NavigationView {
+            List(movieVM.movies, id: \.id) { movie in
+                
+                HStack{
+                    Image("dino")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 70)
+                        .cornerRadius(4)
+                        .padding(.vertical, 4)
                     
-                    HStack{
-                        Image("dino")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 70)
-                            .cornerRadius(4)
-                            .padding(.vertical, 4)
-                        
-                        //Text("ID: \(movie.id)")
-                        Text("\(movie.title)")
-                            .fontWeight(.semibold)
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.5)
-                        
-//                        //if let overview = movie.overview { // bug: unwrap to no value
-//                            Text("Overview: \(overview)")
-                        
-                    }
+                    Text("\(movie.title)")
+                        .fontWeight(.semibold)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.5)
                 }
-                .navigationTitle("Mock movie list")
             }
-            
-            .onAppear() {
-                movieVM.fetchMovies()
-            }
-            
+            .navigationTitle("Mock movie list")
         }
+        
+        
     }
-    
+}
+
 
 
 struct MovieListView_Previews: PreviewProvider {

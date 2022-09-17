@@ -19,12 +19,22 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct PhimMoi_iOSApp: App {    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject var movieViewModel = MovieViewModel.shared
+    
+    // App's state objects
+    @StateObject var appStateVM = AppStateViewModel.shared
+    @StateObject var movieVM = MovieViewModel.shared
     
     var body: some Scene {
         WindowGroup {
-            HomescreenView()
-                .environmentObject(movieViewModel)
+            switch appStateVM.appState {
+            case .splash:
+                SplashScreenView()
+                    .environmentObject(movieVM)
+                    .environmentObject(appStateVM)
+            case .homescreen:
+                AppScreenView()
+                    .environmentObject(movieVM)
+            }
         }
     }
 }

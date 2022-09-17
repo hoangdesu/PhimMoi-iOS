@@ -24,8 +24,6 @@ class MovieViewModel: ObservableObject {
     @Published var movies = [Movie]()
     @Published var selectedMovie: Movie?
     
-    @Published var mockPosterURL: String = ""
-    
     let db = Firestore.firestore()
     let storage = Storage.storage()
     
@@ -43,10 +41,18 @@ class MovieViewModel: ObservableObject {
                 for document in snapshot.documents {
                     let data = document.data()
                     
-                    let id = data["id"] as? String ?? ""
-                    let title = data["title"] as? String ?? ""
+                    let fetchedMovie = Movie(
+                        id: data["id"] as? String ?? "Movie ID",
+                        title: data["title"] as? String ?? "Movie Title",
+                        posterPath: data["posterPath"] as? String ?? "Movie Poster path",
+                        overview: data["overview"] as? String ?? "Movie Overview",
+                        releaseYear: data["releaseYear"] as? String ?? "Movie Release year",
+                        genre: data["genre"] as? String ?? "Movie Genre",
+                        trailerLink: data["trailerLink"] as? String ?? "Movie Trailer link",
+                        language: data["language"] as? String ?? "Movie Language",
+                        length: data["length"] as? String ?? "Movie Length"
+                    )
                     
-                    let fetchedMovie = Movie(id: id, title: title)
                     self.movies.append(fetchedMovie)
                 }
             }
@@ -88,30 +94,6 @@ class MovieViewModel: ObservableObject {
     
     func uploadImage(image: UIImage) {
         let storageRef = storage.reference()
-//        let imagesRef = storageRef.child("images")
-//        var spaceRef = storageRef.child("images/space.jpg")
-//        let firebase_storage_bucket = "gs://phimmoi-ios.appspot.com"
-//        let storagePath = "\(firebase_storage_bucket)/images/space.jpg"
-//        spaceRef = storage.reference(forURL: storagePath)
-//
-//        let myData = Data()
-//
-//        let uploadTask = spaceRef.putData(myData, metadata: nil) { (metadata, error) in
-//            guard let metadata = metadata else {
-//                return
-//            }
-//
-//            // Metadata contains file metadata such as size, content-type.
-//            let size = metadata.size
-//
-//            // You can also access to download URL after upload.
-//            spaceRef.downloadURL { (url, error) in
-//                guard let downloadURL = url else {
-//                    return
-//                }
-//                print("Download URL: \(downloadURL)")
-//            }
-//        }
         
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
@@ -121,20 +103,15 @@ class MovieViewModel: ObservableObject {
         let fileRef = storageRef.child("posters/\(UUID().uuidString).jpg")
         
         let uploadTask = fileRef.putData(imageData, metadata: metadata) { metadata, err in
-//            if let err = err {
-//                print("UPLOAD ERROR: \(err)")
-//                return
-//            }
-
+            if let err = err {
+                print("UPLOAD ERROR: \(err)")
+                return
+            }
+            
             fileRef.downloadURL { url, err in
                 
-
                 guard let url = url else { return }
                 print(">>> UPLOAD IMAGE URL: \(url.absoluteString)")
-                
-                print(">>> BASE URL: \(String(describing: url.baseURL))")
-                
-                self.mockPosterURL = url.absoluteString
                 
             }
         }

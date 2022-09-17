@@ -10,8 +10,12 @@ import Firebase
 
 struct ContentView: View {
     
+    @EnvironmentObject var appStateVM: AppStateViewModel
+    
     var body: some View {
-        Text("ContentView")
+        Button("Go to homescreen") {
+            appStateVM.appState = .homescreen
+        }
     }
         
 }

@@ -14,14 +14,14 @@ struct FeatureCard: View {
     @State var showDetail = false
     var body: some View {
         ZStack {
-            KFImage(URL(string: movie.posterPath!)!)
+            KFImage(URL(string: mockMovie.posterPath!)!)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 300, height: 200)
             
             VStack (){
                 Spacer()
-                Text(movie.title)
+                Text(mockMovie.title)
                     .foregroundColor(.white)
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .shadow(color: .black, radius: 5, x: 5, y: 5)
@@ -39,7 +39,7 @@ struct FeatureCard: View {
             showDetail.toggle()
         }
         .sheet(isPresented: $showDetail) {
-            DetailView()
+            DetailView(movie: mockMovie)
         }
         
     }
