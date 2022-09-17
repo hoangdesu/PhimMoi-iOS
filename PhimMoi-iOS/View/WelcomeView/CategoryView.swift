@@ -7,21 +7,14 @@
 
 import SwiftUI
 
-let category = "My List"
-let poster = "https://m.media-amazon.com/images/I/81FaL5dHHeL._AC_SL1500_.jpg"
-let poster1 = "https://i.pinimg.com/736x/74/f6/87/74f687c316ea2304bc42611f818495f2.jpg"
-
-
-
 struct CategoryView: View {
     
     var body: some View {
         VStack {
             HStack{
-                Text(category)
+                Text(movie.genre ?? "")
                     .bold()
                 Spacer()
-                Image(systemName: "arrow.right")
             }
             .padding(10)
             .padding(.trailing, 20)
@@ -30,17 +23,16 @@ struct CategoryView: View {
             ScrollView(.horizontal,
                        showsIndicators: false) {
                 HStack(spacing: 20) {
-                    PosterCard(link: poster)
-                        
-                    PosterCard(link: poster1)
-                    PosterCard(link: poster)
-                    PosterCard(link: poster1)
-                    PosterCard(link: poster)
-                    PosterCard(link: poster1)
-                    PosterCard(link: poster)
-                    PosterCard(link: poster1)
-                    PosterCard(link: poster)
-                    PosterCard(link: poster1)
+                    PosterCard(link: movie.posterPath!)
+                    PosterCard(link: movie.posterPath!)
+                    PosterCard(link: movie.posterPath!)
+                    PosterCard(link: movie.posterPath!)
+                    PosterCard(link: movie.posterPath!)
+                    PosterCard(link: movie.posterPath!)
+                    PosterCard(link: movie.posterPath!)
+                    PosterCard(link: movie.posterPath!)
+                    PosterCard(link: movie.posterPath!)
+                    PosterCard(link: movie.posterPath!)
                     
                 }.padding(20)
             }
