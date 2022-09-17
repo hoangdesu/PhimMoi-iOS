@@ -13,14 +13,23 @@ struct SplashScreenView: View {
     let duration = 1.0
     
     var body: some View {
-        Text("Splash")
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + self.duration) {
-                    withAnimation(.easeIn(duration: 0.5)) {
-                        appStateVM.appState = .homescreen
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
+            
+            Image("logo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200)
+                .padding()
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + self.duration) {
+                        withAnimation(.easeIn(duration: 1.0)) {
+                            appStateVM.appState = .homescreen
+                        }
                     }
                 }
-            }
+        }
     }
 }
 

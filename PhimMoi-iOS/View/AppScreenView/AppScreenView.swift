@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct AppScreenView: View {
     
     @EnvironmentObject var movieVM: MovieViewModel
@@ -18,7 +17,6 @@ struct AppScreenView: View {
         case addMovieView
         case userView
     }
-    
     
     @State var selectedScreen: Screen = .welcomeView
     
