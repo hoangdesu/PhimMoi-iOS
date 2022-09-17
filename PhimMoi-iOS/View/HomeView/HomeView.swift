@@ -46,6 +46,10 @@ struct HomeView: View {
                         
                         // TODO: Create a new movie list for top picks
                         CategoryView(headline: "Top picks", movieList: movieVM.movies)
+                        
+                        CategoryView(headline: "Explore", movieList: movieVM.movies)
+                        
+                        CategoryView(headline: "Action", movieList: movieVM.movies)
                     }
                 }
                 .navigationTitle("")
