@@ -29,6 +29,7 @@ struct PhimMoi_iOSApp: App {
             switch appStateVM.appState {
             case .splash:
                 SplashScreenView()
+                    .environmentObject(movieVM)
                     .environmentObject(appStateVM)
             case .homescreen:
                 AppScreenView()

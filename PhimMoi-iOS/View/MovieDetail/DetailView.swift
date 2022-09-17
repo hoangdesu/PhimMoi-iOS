@@ -11,6 +11,7 @@ import YouTubePlayerKit
 
 struct DetailView: View {
     
+    @State var movie: Movie
     @State var youTubePlayer = YouTubePlayer(source: .url(""))
     
     var body: some View {
@@ -61,8 +62,8 @@ struct DetailView: View {
     }
 }
 
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView()
-    }
-}
+//struct DetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DetailView(movie: movie)
+//    }
+//}

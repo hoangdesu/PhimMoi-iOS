@@ -17,7 +17,7 @@ struct SearchView: View {
         List {
             ForEach(filteredMovie) { (movies:Movie) in
                 HStack{
-                    KFImage(URL(string: movie.posterPath!)!)
+                    KFImage(URL(string: mockMovie.posterPath!)!)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 70)
@@ -25,7 +25,7 @@ struct SearchView: View {
                         .padding(.vertical, 4)
                     
                     //Text("ID: \(movie.id)")
-                    Text("\(movies.title)")
+                    Text("\(mockMovie.title)")
                         .fontWeight(.semibold)
                         .lineLimit(2)
                         .minimumScaleFactor(0.5)
@@ -34,7 +34,7 @@ struct SearchView: View {
                     showDetail.toggle()
                 }
                 .sheet(isPresented: $showDetail) {
-                    DetailView()
+                    DetailView(movie: mockMovie)
                 }
             }
         }.navigationBarTitleDisplayMode(.inline)

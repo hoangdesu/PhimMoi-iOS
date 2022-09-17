@@ -12,6 +12,7 @@ struct CategoryView: View {
     @EnvironmentObject var movieVM: MovieViewModel
     
     var headline: String
+    @State var movieList: [Movie]
     
     var body: some View {
         VStack {
@@ -28,7 +29,7 @@ struct CategoryView: View {
                        showsIndicators: false) {
                 HStack(spacing: 20) {
                     
-                    ForEach(movieVM.movies, id: \.id) { movie in
+                    ForEach(self.movieList, id: \.id) { movie in
                         PosterCard(movie: movie)
                     }
                     
@@ -42,8 +43,8 @@ struct CategoryView: View {
     }
 }
 
-struct CategoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoryView(headline: "Action")
-    }
-}
+//struct CategoryView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CategoryView(headline: "Action")
+//    }
+//}

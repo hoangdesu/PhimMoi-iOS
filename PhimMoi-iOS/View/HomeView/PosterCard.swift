@@ -9,6 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct PosterCard: View {
+    
     @State var movie: Movie
     
     @State var showDetail = false
@@ -29,7 +30,7 @@ struct PosterCard: View {
             showDetail.toggle()
         }
         .sheet(isPresented: $showDetail) {
-            DetailView()
+            DetailView(movie: self.movie)
         }
     }
 }
