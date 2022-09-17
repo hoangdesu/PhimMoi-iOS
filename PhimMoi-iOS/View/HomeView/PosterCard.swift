@@ -8,19 +8,22 @@
 import SwiftUI
 import Kingfisher
 
-
 struct PosterCard: View {
-    @State var link : String
+    @State var movie: Movie
+    
     @State var showDetail = false
+    
     var body: some View {
         ZStack {
-            KFImage(URL(string: link)!)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            if let posterPath = movie.posterPath {
+                KFImage(URL(string: posterPath))
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
         }
         .frame(width: 150, height: 220)
         .cornerRadius(15)
-        .shadow(color: Color.gray, radius: 15, x: 0, y: 10)
+        .shadow(color: Color.gray, radius: 12, x: 0, y: 8)
         .padding(.bottom, 15)
         .onTapGesture {
             showDetail.toggle()
@@ -28,11 +31,5 @@ struct PosterCard: View {
         .sheet(isPresented: $showDetail) {
             DetailView()
         }
-    }
-}
-
-struct PosterCard_Previews: PreviewProvider {
-    static var previews: some View {
-        PosterCard(link: "https://m.media-amazon.com/images/I/81FaL5dHHeL._AC_SL1500_.jpg")
     }
 }

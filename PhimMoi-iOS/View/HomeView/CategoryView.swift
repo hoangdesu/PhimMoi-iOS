@@ -9,11 +9,15 @@ import SwiftUI
 
 struct CategoryView: View {
     
+    @EnvironmentObject var movieVM: MovieViewModel
+    
+    var headline: String
+    
     var body: some View {
         VStack {
-            HStack{
-                Text(movie.genre ?? "")
-                    .bold()
+            HStack {
+                Text(self.headline)
+                    .modifier(CategogyTextModifier())
                 Spacer()
             }
             .padding(10)
@@ -23,18 +27,15 @@ struct CategoryView: View {
             ScrollView(.horizontal,
                        showsIndicators: false) {
                 HStack(spacing: 20) {
-                    PosterCard(link: movie.posterPath!)
-                    PosterCard(link: movie.posterPath!)
-                    PosterCard(link: movie.posterPath!)
-                    PosterCard(link: movie.posterPath!)
-                    PosterCard(link: movie.posterPath!)
-                    PosterCard(link: movie.posterPath!)
-                    PosterCard(link: movie.posterPath!)
-                    PosterCard(link: movie.posterPath!)
-                    PosterCard(link: movie.posterPath!)
-                    PosterCard(link: movie.posterPath!)
                     
-                }.padding(20)
+                    ForEach(movieVM.movies, id: \.id) { movie in
+                        PosterCard(movie: movie)
+                    }
+                    
+                }
+                .padding(.leading, 20)
+                .padding(.top, 10)
+                .padding(.bottom, 20)
             }
         }
         
@@ -43,6 +44,6 @@ struct CategoryView: View {
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryView()
+        CategoryView(headline: "Action")
     }
 }

@@ -132,12 +132,12 @@ struct AddMovieView: View {
                     
                     Text("Recently upload photo from Firebase")
                     
-                    if movieVM.mockPosterURL != "" {
-                        KFImage(URL(string: movieVM.mockPosterURL)!)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 200)
-                    }
+//                    if movieVM.mockPosterURL != "" {
+//                        KFImage(URL(string: movieVM.mockPosterURL)!)
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fit)
+//                            .frame(width: 200)
+//                    }
                     
                 
                 }

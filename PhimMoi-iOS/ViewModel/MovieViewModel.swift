@@ -24,8 +24,6 @@ class MovieViewModel: ObservableObject {
     @Published var movies = [Movie]()
     @Published var selectedMovie: Movie?
     
-    @Published var mockPosterURL: String = ""
-    
     let db = Firestore.firestore()
     let storage = Storage.storage()
     
@@ -43,10 +41,18 @@ class MovieViewModel: ObservableObject {
                 for document in snapshot.documents {
                     let data = document.data()
                     
-                    let id = data["id"] as? String ?? ""
-                    let title = data["title"] as? String ?? ""
+                    let fetchedMovie = Movie(
+                        id: data["id"] as? String ?? "Movie ID",
+                        title: data["title"] as? String ?? "Movie Title",
+                        posterPath: data["posterPath"] as? String ?? "Movie Poster path",
+                        overview: data["overview"] as? String ?? "Movie Overview",
+                        releaseYear: data["releaseYear"] as? String ?? "Movie Release year",
+                        genre: data["genre"] as? String ?? "Movie Genre",
+                        trailerLink: data["trailerLink"] as? String ?? "Movie Trailer link",
+                        language: data["language"] as? String ?? "Movie Language",
+                        length: data["length"] as? String ?? "Movie Length"
+                    )
                     
-                    let fetchedMovie = Movie(id: id, title: title)
                     self.movies.append(fetchedMovie)
                 }
             }
@@ -103,11 +109,9 @@ class MovieViewModel: ObservableObject {
             }
             
             fileRef.downloadURL { url, err in
-
+                
                 guard let url = url else { return }
                 print(">>> UPLOAD IMAGE URL: \(url.absoluteString)")
-                
-                self.mockPosterURL = url.absoluteString
                 
             }
         }
