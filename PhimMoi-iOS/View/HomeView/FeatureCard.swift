@@ -8,27 +8,28 @@
 import SwiftUI
 import Kingfisher
 
-
-
 struct FeatureCard: View {
+    
+    let movie: Movie
     @State var showDetail = false
+    
     var body: some View {
         ZStack {
-            KFImage(URL(string: mockMovie.posterPath!)!)
+            KFImage(URL(string: movie.posterPath!)!)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 300, height: 200)
             
-            VStack (){
+            VStack(alignment: .leading) {
                 Spacer()
-                Text(mockMovie.title)
+                Text(movie.title)
                     .foregroundColor(.white)
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .shadow(color: .black, radius: 5, x: 5, y: 5)
                     .lineSpacing(3)
                     .padding(20)
-//                    .padding(.leading, 20)
                     .padding(.trailing, 50)
+                    .frame(width: 280, alignment: .leading)
             }
         }
         .frame(width: 300, height: 200)
@@ -39,7 +40,7 @@ struct FeatureCard: View {
             showDetail.toggle()
         }
         .sheet(isPresented: $showDetail) {
-            DetailView(movie: mockMovie)
+            DetailView(movie: movie)
         }
         
     }
@@ -47,6 +48,6 @@ struct FeatureCard: View {
 
 struct FeatureCard_Previews: PreviewProvider {
     static var previews: some View {
-        FeatureCard()
+        FeatureCard(movie: mockMovie)
     }
 }

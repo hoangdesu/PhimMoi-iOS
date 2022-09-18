@@ -24,6 +24,8 @@ class MovieViewModel: ObservableObject {
     
     // Properties
     @Published var movies = [Movie]()
+    @Published var featuredMovies = [Movie]()
+    
     @Published var selectedMovie: Movie?
     
     let db = Firestore.firestore()
@@ -124,4 +126,20 @@ class MovieViewModel: ObservableObject {
         }
     }
     
+    func getFeaturedMovies() {
+        var seen = [String:String]()
+        
+        for _ in 0...5 {
+            let movie = movies.randomElement()
+            
+            // check for duplication
+            if let movie = movie {
+                if seen[movie.id] == nil {
+                    self.featuredMovies.append(movie)
+                    seen[movie.id] = movie.id
+                }
+            }
+        }
+        
+    }
 }

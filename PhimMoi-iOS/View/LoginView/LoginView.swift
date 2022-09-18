@@ -71,7 +71,9 @@ struct LoginView: View {
                 
                 Button("Go to home screen") {
                     // check if has user, sign in
-                    sessionVM.sessionState = .signedIn
+                    withAnimation(.easeIn(duration: 1.0)) {
+                        sessionVM.sessionState = .signedIn
+                    }
                 }
                 
                 Button("Mock signup") {

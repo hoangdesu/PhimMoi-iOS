@@ -74,13 +74,13 @@ struct AddMovieView: View {
     }
     
     func validateInputs() {
-        guard !inpTitle.isEmpty,
-              !inpPosterPath.isEmpty,
-              !inpOverview.isEmpty,
-              !inpReleaseYear.isEmpty,
-              !inpGenre.isEmpty,
-              !inpTrailerLink.isEmpty,
-              !inpLanguage.isEmpty,
+        guard !inpTitle.isEmpty ||
+              !inpPosterPath.isEmpty ||
+              !inpOverview.isEmpty ||
+              !inpReleaseYear.isEmpty ||
+              !inpGenre.isEmpty ||
+              !inpTrailerLink.isEmpty ||
+              !inpLanguage.isEmpty ||
               !inpLength.isEmpty
         else {
             print("Missing input values, please double check")

@@ -38,9 +38,9 @@ struct HomeView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 20) {
-                                FeatureCard()
-                                FeatureCard()
-                                FeatureCard()
+                                ForEach(movieVM.featuredMovies, id: \.id) { movie in
+                                    FeatureCard(movie: movie)
+                                }
                             }.padding(20)
                         }
                         
@@ -74,6 +74,11 @@ struct HomeView: View {
                             }
                             .frame(width: 30)
                         }
+                    }
+                }
+                .onAppear {
+                    DispatchQueue.main.async {
+                        movieVM.getFeaturedMovies()
                     }
                 }
             }
