@@ -17,7 +17,7 @@ struct UserView: View {
     var body: some View {
         VStack{
             Button("Show all movies fetched") {
-//                movieVM.fetchMovies()
+                movieVM.fetchMovies()
                 print("Total movies in DB: \(movieVM.movies.count)")
                 showList = true
             }

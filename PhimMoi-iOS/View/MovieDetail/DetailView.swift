@@ -24,12 +24,13 @@ struct DetailView: View {
                         .shadow(color: .black, radius: 10, x: 5, y: 5)
                     
                     Spacer()
+                   
                     
                     Text (movie.title.uppercased())
                         .multilineTextAlignment(.center)
                         .font(.system(size: 30, weight: .bold, design: .rounded))
                         .lineSpacing(5)
-                        .padding([.leading, .trailing], 20)
+                        .padding(.horizontal, 25)
                         .padding(.bottom, 10)
                         .padding(.top, 30)
                     
@@ -41,16 +42,17 @@ struct DetailView: View {
                     
                     Spacer()
                     
-                    Text(movie.overview ?? "")
-                        .multilineTextAlignment(.center)
-                        .font(.system(size: 20, weight: .regular, design: .rounded))
-                        .padding(30)
-                    
                     KFImage(URL(string: movie.posterPath!)!)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 500)
                         .cornerRadius(20)
+                    
+                    Text(movie.overview ?? "")
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 20, weight: .regular, design: .rounded))
+                        .padding(30)
+                    
                 }
             }
         }

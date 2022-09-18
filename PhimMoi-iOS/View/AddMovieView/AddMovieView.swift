@@ -28,7 +28,7 @@ struct AddMovieView: View {
     @State private var showAddFailAlert = false
     
     // Picker
-    let genres = ["Action", "Comedy", "Fantasy", "Horror", "Adventure", "Mystery", "Drama", "Science Fiction", "Thriller", "Romance", "Musical"]
+    let genres = ["Action", "Comedy", "Fantasy", "Horror", "Adventure", "Mystery", "Drama", "Science Fiction", "Thriller", "Romance", "Musical", "Animation"].sorted()
     
     // PhotoPicker
     //    @State private var selectedImageData: Data? = nil
@@ -106,6 +106,9 @@ struct AddMovieView: View {
                 }
                 
                 Section(header: SectionHeader("Poster")) {
+                    // TODO: could support uploading image from a URL, or select from library
+                    TextEditor(text: $inpPosterPath)
+                    
                     if let inputImage = self.inputImage {
                         Image(uiImage: inputImage)
                             .resizable()
