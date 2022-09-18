@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         Button("Go to homescreen") {
-            appStateVM.appState = .homescreen
+            appStateVM.appState = .homeScreen
         }
     }
         

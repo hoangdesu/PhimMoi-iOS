@@ -12,34 +12,41 @@ struct LoginView: View {
     @StateObject var vm = LoginViewModel()
     @State var signup = false
     
+    @EnvironmentObject var sessionVM: SessionViewModel
+    
     var body: some View {
         loginScreen
     }
     
-    // use this view
+    // MARK: - USE THiS VIEW
     var loginScreen: some View {
         ZStack {
             Image("login")
                 .resizable()
                 .ignoresSafeArea()
+            
             VStack(spacing: 20) {
                 Spacer()
+                
                 Image("logo")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 250)
                     .padding(.bottom, 50)
+                
                 TextField("Username", text: $vm.username)
                     .disableAutocorrection(true)
                     .font(.system(size: 25, weight: .regular, design: .rounded))
                     .textFieldStyle(.roundedBorder)
                     .textInputAutocapitalization(.never)
                     .padding([.leading, .trailing], 70)
+                
                 SecureField("Password", text: $vm.password)
                     .textFieldStyle(.roundedBorder)
                     .font(.system(size: 25, weight: .regular, design: .rounded))
                     .textInputAutocapitalization(.never)
                     .padding([.leading, .trailing], 70)
+                
                 Button (action: vm.authenticate,
                         label: {
                     Text("Sign In")
@@ -49,17 +56,17 @@ struct LoginView: View {
                         .background(.red)
                         .cornerRadius(10)
                 }) .disabled(false)
+                
                 Button {
                     signup.toggle()
+                } label: {
+                    Text("Sign Up")
+                        .foregroundColor(.white)
+                        .padding()
+                        .padding([.leading, .trailing], 98)
+                        .background(.red)
+                        .cornerRadius(10)
                 }
-            label: {
-                Text("Sign Up")
-                    .foregroundColor(.white)
-                    .padding()
-                    .padding([.leading, .trailing], 98)
-                    .background(.red)
-                    .cornerRadius(10)
-            }
                 Spacer()
             }
         }
@@ -71,7 +78,14 @@ struct LoginView: View {
         }
     }
     
-    // archived view
+    
+    
+    
+    
+    
+    
+    
+    // MARK: - archived view
     var oldView: some View {
         ZStack{
             if !vm.authenticated {
@@ -115,15 +129,14 @@ struct LoginView: View {
                         }) .disabled(false)
                         Button {
                             signup.toggle()
+                        } label: {
+                            Text("Sign Up")
+                                .foregroundColor(.white)
+                                .padding()
+                                .padding([.leading, .trailing], 98)
+                                .background(.red)
+                                .cornerRadius(10)
                         }
-                    label: {
-                        Text("Sign Up")
-                            .foregroundColor(.white)
-                            .padding()
-                            .padding([.leading, .trailing], 98)
-                            .background(.red)
-                            .cornerRadius(10)
-                    }
                         Spacer()
                     }
                 }

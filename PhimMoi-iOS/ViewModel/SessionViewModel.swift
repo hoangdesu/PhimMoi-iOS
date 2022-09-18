@@ -19,6 +19,6 @@ class SessionViewModel: ObservableObject {
     
     init() { }
     
-    @Published var sessionState: SessionState = .loggedOut
+    @Published var sessionState: SessionState = .loggedIn
     
 }

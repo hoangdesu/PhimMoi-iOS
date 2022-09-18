@@ -30,9 +30,9 @@ struct SplashScreenView: View {
                         withAnimation(.easeIn(duration: 1.0)) {
                             switch sessionVM.sessionState {
                             case .loggedOut:
-                                appStateVM.appState = .login
+                                appStateVM.appState = .loginScreen
                             case .loggedIn:
-                                appStateVM.appState = .homescreen
+                                appStateVM.appState = .homeScreen
                             }
                         }
                     }
