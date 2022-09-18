@@ -11,6 +11,7 @@ struct SplashScreenView: View {
     
     @EnvironmentObject var movieVM: MovieViewModel
     @EnvironmentObject var appStateVM: AppStateViewModel
+    @EnvironmentObject var sessionVM: SessionViewModel
     
     let duration = 1.0
     
@@ -27,7 +28,12 @@ struct SplashScreenView: View {
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + self.duration) {
                         withAnimation(.easeIn(duration: 1.0)) {
-                            appStateVM.appState = .homescreen
+                            switch sessionVM.sessionState {
+                            case .loggedOut:
+                                appStateVM.appState = .login
+                            case .loggedIn:
+                                appStateVM.appState = .homescreen
+                            }
                         }
                     }
                 }

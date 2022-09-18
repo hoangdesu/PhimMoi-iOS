@@ -11,6 +11,7 @@ class AppStateViewModel: ObservableObject {
     enum AppState {
         case splash
         case homescreen
+        case login
     }
     
     static let shared = AppStateViewModel()
