@@ -43,7 +43,7 @@ class MovieViewModel: ObservableObject {
                 for document in snapshot.documents {
                     let data = document.data()
                     
-                    let fetchedMovie = Movie(
+                    var fetchedMovie = Movie(
                         id: data["id"] as? String ?? "Movie ID",
                         title: data["title"] as? String ?? "Movie Title",
                         posterPath: data["posterPath"] as? String ?? "Movie Poster path",
@@ -54,6 +54,11 @@ class MovieViewModel: ObservableObject {
                         language: data["language"] as? String ?? "Movie Language",
                         length: data["length"] as? String ?? "Movie Length"
                     )
+                    
+                    // handle missing poster path will cause app to crash
+                    if fetchedMovie.posterPath!.isEmpty {
+                        fetchedMovie.posterPath = "https://www.choovie.com.au/asset/img/placeholder.png"
+                    }
                     
                     self.movies.append(fetchedMovie)
                 }

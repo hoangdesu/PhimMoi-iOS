@@ -13,12 +13,10 @@ struct SplashScreenView: View {
     @EnvironmentObject var appStateVM: AppStateViewModel
     @EnvironmentObject var sessionVM: SessionViewModel
     
-    let duration = 1.0
+    let duration = 1.5
     
     var body: some View {
         ZStack {
-            Color.black
-                .ignoresSafeArea(.all)
             
             Image("logo")
                 .resizable()
@@ -28,12 +26,6 @@ struct SplashScreenView: View {
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + self.duration) {
                         withAnimation(.easeIn(duration: 1.0)) {
-//                            switch sessionVM.sessionState {
-//                            case .signedOut:
-//                                appStateVM.appState = .loginScreen
-//                            case .signedIn:
-//                                appStateVM.appState = .homeScreen
-//                            }
                             appStateVM.appState = .contentScreen
                         }
                     }

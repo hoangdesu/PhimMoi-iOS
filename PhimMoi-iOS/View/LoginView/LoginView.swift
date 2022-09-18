@@ -70,8 +70,12 @@ struct LoginView: View {
                 }
                 
                 Button("Go to home screen") {
-                    // check if has user, sign in 
+                    // check if has user, sign in
                     sessionVM.sessionState = .signedIn
+                }
+                
+                Button("Mock signup") {
+                    sessionVM.signUp()
                 }
                 
                 Spacer()

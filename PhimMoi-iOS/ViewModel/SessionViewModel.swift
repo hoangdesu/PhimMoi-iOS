@@ -27,7 +27,7 @@ class SessionViewModel: ObservableObject {
     }
     
     func signIn() {
-        
+        // mock data
         let email = "email"
         let password = "password"
         
@@ -43,6 +43,22 @@ class SessionViewModel: ObservableObject {
     }
     
     func signUp() {
+        // mock data
+        let email = "email@email.com"
+        let password = "password"
+//        email.is
+        
+        authHandler.createUser(withEmail: email, password: password) { result, err in
+            guard result != nil, err == nil else {
+                print("Create user FAILED: \(err!.localizedDescription)")
+                return
+            }
+            
+            // signup success
+            print("Signup success")
+            
+        }
+        
         
     }
     

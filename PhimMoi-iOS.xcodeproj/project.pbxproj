@@ -14,6 +14,7 @@
 		2935968928D38E480056A195 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935968828D38E480056A195 /* MovieViewModel.swift */; };
 		2935968B28D38E930056A195 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935968A28D38E930056A195 /* SessionViewModel.swift */; };
 		29802FA328D441240014535D /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29802FA228D441240014535D /* MovieListView.swift */; };
+		298BD47328D726DF00504369 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BD47228D726DF00504369 /* Extensions.swift */; };
 		298F498828D63C8100B6FCC4 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298F498728D63C8100B6FCC4 /* Modifiers.swift */; };
 		29C4987928C6A01700363569 /* PhimMoi_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4987828C6A01700363569 /* PhimMoi_iOSApp.swift */; };
 		29C4987B28C6A01700363569 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4987A28C6A01700363569 /* ContentView.swift */; };
@@ -49,6 +50,7 @@
 		2935968828D38E480056A195 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		2935968A28D38E930056A195 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
 		29802FA228D441240014535D /* MovieListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
+		298BD47228D726DF00504369 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		298F498728D63C8100B6FCC4 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		29C4987528C6A01700363569 /* PhimMoi-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PhimMoi-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C4987828C6A01700363569 /* PhimMoi_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhimMoi_iOSApp.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				298F498728D63C8100B6FCC4 /* Modifiers.swift */,
+				298BD47228D726DF00504369 /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				F43746FF28D49D8200BE6C01 /* SearchView.swift in Sources */,
 				7F12C42328D460CA00D9B9AB /* SectionHeader.swift in Sources */,
 				298F498828D63C8100B6FCC4 /* Modifiers.swift in Sources */,
+				298BD47328D726DF00504369 /* Extensions.swift in Sources */,
 				F48FD72228D5B53500C35A9A /* SmallDetail.swift in Sources */,
 				F44729D228D0514D0076F0C5 /* HomeView.swift in Sources */,
 				F43746FA28D494A100BE6C01 /* FeatureCard.swift in Sources */,
