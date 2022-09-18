@@ -18,7 +18,9 @@ class MovieViewModel: ObservableObject {
     // using Singleton design pattern
     static let shared = MovieViewModel()
     
-    private init() { }
+    private init() {
+        self.fetchMovies()
+    }
     
     // Properties
     @Published var movies = [Movie]()

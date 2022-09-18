@@ -78,10 +78,6 @@ struct HomeView: View {
                 }
             }
         }
-        .onAppear() {
-            movieVM.fetchMovies()
-        }
-        
     }
 }
 
