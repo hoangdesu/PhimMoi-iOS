@@ -25,16 +25,18 @@ struct DetailView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 430)
                             .clipShape(RoundedRectangle(cornerRadius: 120))
+                            .shadow(color: .gray, radius: 15, x: 0, y: 10)
                         VStack {
-                        KFImage(URL(string: movie.posterPath!)!)
-                            .resizable()
-                            .edgesIgnoringSafeArea(.all)
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 430, height: 300, alignment: .top)
-                            .clipped()
+                            KFImage(URL(string: movie.posterPath!)!)
+                                .resizable()
+                                .edgesIgnoringSafeArea(.all)
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 430, height: 300, alignment: .top)
+                                .clipped()
                             Spacer()
                         }
                     }
+                    
                     Spacer()
                     HStack{
                         if(favourite) {
