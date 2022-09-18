@@ -25,7 +25,6 @@ struct SplashScreenView: View {
                 .frame(width: 200)
                 .padding()
                 .onAppear {
-                    movieVM.fetchMovies()
                     DispatchQueue.main.asyncAfter(deadline: .now() + self.duration) {
                         withAnimation(.easeIn(duration: 1.0)) {
                             appStateVM.appState = .homescreen
