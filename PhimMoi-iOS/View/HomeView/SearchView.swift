@@ -16,17 +16,17 @@ struct SearchView: View {
     
     var body: some View {
         List {
-            ForEach(filteredMovie, id: \.id) { (movies:Movie) in
+            ForEach(filteredMovie, id: \.id) { movie in
                 HStack{
-                    KFImage(URL(string: mockMovie.posterPath!)!)
+                    KFImage(URL(string: movie.posterPath!)!)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 70)
                         .cornerRadius(4)
                         .padding(.vertical, 4)
+                        .padding(.trailing, 4)
                     
-                    //Text("ID: \(movie.id)")
-                    Text("\(mockMovie.title)")
+                    Text("\(movie.title)")
                         .fontWeight(.semibold)
                         .lineLimit(2)
                         .minimumScaleFactor(0.5)
@@ -35,19 +35,18 @@ struct SearchView: View {
                     showDetail.toggle()
                 }
                 .sheet(isPresented: $showDetail) {
-                    DetailView(movie: mockMovie)
+                    DetailView(movie: movie)
                 }
             }
         }
         .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search")
         
-        
     }
     
     var filteredMovie: [Movie] {
         if searchText.isEmpty {
-            return movieVM.movies
+            return []
         } else {
             return movieVM.movies.filter {
                 $0.title.localizedCaseInsensitiveContains(searchText)

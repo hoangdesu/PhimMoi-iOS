@@ -33,14 +33,14 @@ struct AppScreenView: View {
             MovieListView()
                 .tabItem {
                     Image(systemName: "heart")
-                    Text("Movie List")
+                    Text("My movies")
                 }
                 .tag(Screen.movieListView)
             
             AddMovieView()
                 .tabItem {
                     Image(systemName: "plus.square")
-                    Text("Add Movie")
+                    Text("Add movie")
                 }
                 .tag(Screen.addMovieView)
             

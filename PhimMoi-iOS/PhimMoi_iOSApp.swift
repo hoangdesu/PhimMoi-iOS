@@ -44,6 +44,8 @@ struct PhimMoi_iOSApp: App {
                 case .signedIn:
                     AppScreenView()
                         .environmentObject(movieVM)
+                        .environmentObject(appStateVM)
+                        .environmentObject(sessionVM)
                 }
             }
         }

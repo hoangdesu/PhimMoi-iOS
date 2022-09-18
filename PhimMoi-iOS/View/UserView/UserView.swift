@@ -11,13 +11,22 @@ import YouTubePlayerKit
 struct UserView: View {
     
     @EnvironmentObject var movieVM: MovieViewModel
+    @EnvironmentObject var appStateVM: AppStateViewModel
+    @EnvironmentObject var sessionVM: SessionViewModel
     
     @State var showList = false
     
     var body: some View {
-        VStack{
+        VStack {
+            
+            Button {
+                signOutHandler()
+            } label: {
+                Text("Sign out")
+                    .foregroundColor(.red)
+            }
+            
             Button("Show all movies fetched") {
-//                movieVM.fetchMovies()
                 print("Total movies in DB: \(movieVM.movies.count)")
                 showList = true
             }
@@ -36,6 +45,10 @@ struct UserView: View {
                 }
             }
         }
+    }
+    
+    func signOutHandler() {
+        sessionVM.sessionState = .signedOut
     }
 }
 

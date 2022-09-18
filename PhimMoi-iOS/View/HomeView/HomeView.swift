@@ -8,8 +8,6 @@
 import SwiftUI
 import Foundation
 
-
-
 struct HomeView: View {
     
     @EnvironmentObject var movieVM: MovieViewModel
@@ -45,11 +43,11 @@ struct HomeView: View {
                         }
                         
                         // TODO: Create a new movie list for top picks
-                        CategoryView(headline: "Top picks", movieList: movieVM.movies)
+                        CategoryView(headline: "Top picks", movieList: movieVM.movies.shuffled())
                         
-                        CategoryView(headline: "Explore", movieList: movieVM.movies)
+                        CategoryView(headline: "Explore", movieList: movieVM.movies.shuffled())
                         
-                        CategoryView(headline: "Action", movieList: movieVM.movies)
+                        CategoryView(headline: "Action", movieList: movieVM.movies.shuffled())
                     }
                 }
                 .navigationTitle("")

@@ -141,11 +141,11 @@ struct AddMovieView: View {
                     
                     
                     // FOR TESTING ONLY
-                    Button("Upload image (TEST)") {
-                        uploadImageHandler()
-                    }
+//                    Button("Upload image (TEST)") {
+//                        uploadImageHandler()
+//                    }
                     
-                    Text("Recently upload photo from Firebase")
+//                    Text("Recently upload photo from Firebase")
                     
                     //                    if movieVM.mockPosterURL != "" {
                     //                        KFImage(URL(string: movieVM.mockPosterURL)!)

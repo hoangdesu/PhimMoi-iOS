@@ -48,8 +48,8 @@ struct LoginView: View {
                     .textInputAutocapitalization(.never)
                     .padding([.leading, .trailing], 70)
                 
-                Button (action: vm.authenticate,
-                        label: {
+                Button(action: { login() },
+                       label: {
                     Text("Sign In")
                         .foregroundColor(.white)
                         .padding()
@@ -69,16 +69,17 @@ struct LoginView: View {
                         .cornerRadius(10)
                 }
                 
-                Button("Go to home screen") {
-                    // check if has user, sign in
-                    withAnimation(.easeIn(duration: 1.0)) {
-                        sessionVM.sessionState = .signedIn
-                    }
-                }
-                
-                Button("Mock signup") {
-                    sessionVM.signUp()
-                }
+                // For testing
+                //                Button("Go to home screen") {
+                //                    // check if has user, sign in
+                //                    withAnimation(.easeIn(duration: 1.0)) {
+                //                        sessionVM.sessionState = .signedIn
+                //                    }
+                //                }
+                //
+                //                Button("Mock signup") {
+                //                    sessionVM.signUp()
+                //                }
                 
                 Spacer()
             }
@@ -92,7 +93,11 @@ struct LoginView: View {
     }
     
     
-    
+    func login() {
+        withAnimation(.easeIn(duration: 1.0)) {
+            sessionVM.sessionState = .signedIn
+        }
+    }
     
     
     
