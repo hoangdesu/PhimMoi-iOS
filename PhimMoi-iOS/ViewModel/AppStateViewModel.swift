@@ -10,8 +10,7 @@ import Foundation
 class AppStateViewModel: ObservableObject {
     enum AppState {
         case splashScreen
-        case homeScreen
-        case loginScreen
+        case contentScreen
     }
     
     static let shared = AppStateViewModel()

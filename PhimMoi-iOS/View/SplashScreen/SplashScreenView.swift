@@ -28,12 +28,13 @@ struct SplashScreenView: View {
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + self.duration) {
                         withAnimation(.easeIn(duration: 1.0)) {
-                            switch sessionVM.sessionState {
-                            case .loggedOut:
-                                appStateVM.appState = .loginScreen
-                            case .loggedIn:
-                                appStateVM.appState = .homeScreen
-                            }
+//                            switch sessionVM.sessionState {
+//                            case .signedOut:
+//                                appStateVM.appState = .loginScreen
+//                            case .signedIn:
+//                                appStateVM.appState = .homeScreen
+//                            }
+                            appStateVM.appState = .contentScreen
                         }
                     }
                 }

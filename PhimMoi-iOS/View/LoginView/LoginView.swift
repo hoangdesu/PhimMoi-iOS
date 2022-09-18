@@ -13,12 +13,13 @@ struct LoginView: View {
     @State var signup = false
     
     @EnvironmentObject var sessionVM: SessionViewModel
+    @EnvironmentObject var appStateVM: AppStateViewModel
     
     var body: some View {
         loginScreen
     }
     
-    // MARK: - USE THiS VIEW
+    // MARK: - USE THIS VIEW
     var loginScreen: some View {
         ZStack {
             Image("login")
@@ -67,6 +68,12 @@ struct LoginView: View {
                         .background(.red)
                         .cornerRadius(10)
                 }
+                
+                Button("Go to home screen") {
+                    // check if has user, sign in 
+                    sessionVM.sessionState = .signedIn
+                }
+                
                 Spacer()
             }
         }

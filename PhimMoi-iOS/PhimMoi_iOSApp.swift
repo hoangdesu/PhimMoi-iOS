@@ -27,18 +27,24 @@ struct PhimMoi_iOSApp: App {
     
     var body: some Scene {
         WindowGroup {
-            
             switch appStateVM.appState {
             case .splashScreen:
                 SplashScreenView()
                     .environmentObject(movieVM)
                     .environmentObject(appStateVM)
                     .environmentObject(sessionVM)
-            case .loginScreen:
-                LoginView()
-            case .homeScreen:
-                AppScreenView()
-                    .environmentObject(movieVM)
+                
+            case .contentScreen:
+                switch sessionVM.sessionState {
+                case .signedOut:
+                    LoginView()
+                        .environmentObject(sessionVM)
+                        .environmentObject(appStateVM)
+                    
+                case .signedIn:
+                    AppScreenView()
+                        .environmentObject(movieVM)
+                }
             }
         }
     }
