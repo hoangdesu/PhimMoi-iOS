@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SplashScreenView: View {
-    
+    @State var animate = false
     @EnvironmentObject var movieVM: MovieViewModel
     @EnvironmentObject var appStateVM: AppStateViewModel
     @EnvironmentObject var sessionVM: SessionViewModel
@@ -20,16 +20,29 @@ struct SplashScreenView: View {
             
             Image("logo")
                 .resizable()
-                .scaledToFit()
-                .frame(width: 200)
-                .padding()
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + self.duration) {
-                        withAnimation(.easeIn(duration: 1.0)) {
-                            appStateVM.appState = .contentScreen
-                        }
-                    }
-                }
+                .renderingMode(.original)
+                .aspectRatio(contentMode:animate ? .fill : .fit)
+                .frame(width: animate ? nil : 200)
+                .scaleEffect(animate ? 3 : 1)
+        }
+        .ignoresSafeArea(.all, edges: .all)
+        .onAppear {
+            movieVM.fetchMovies()
+            animateSplash()
+            
+        }
+    }
+    
+    func animateSplash() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            withAnimation(Animation.easeOut(duration: 1.0)) {
+                animate.toggle()
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            withAnimation(Animation.easeIn(duration: 0)) {
+                appStateVM.appState = .contentScreen
+            }
         }
     }
 }

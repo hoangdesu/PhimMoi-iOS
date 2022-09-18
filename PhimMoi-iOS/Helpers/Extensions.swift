@@ -2,10 +2,27 @@
 //  Extensions.swift
 //  PhimMoi-iOS
 //
-//  Created by ドロケ on 18/09/2022.
+//  Created by Uyen Nguyen Minh Duy on 18/09/2022.
 //
 
 import Foundation
+import UIKit
+import SwiftUI
+
+extension UIApplication {
+    var keyWindow: UIWindow? {
+        // Get connected scenes
+        return UIApplication.shared.connectedScenes
+        // Keep only active scenes, onscreen and visible to the user
+            .filter { $0.activationState == .foregroundActive }
+        // Keep only the first `UIWindowScene`
+            .first(where: { $0 is UIWindowScene })
+        // Get its associated windows
+            .flatMap({ $0 as? UIWindowScene })?.windows
+        // Finally, keep only the key window
+            .first(where: \.isKeyWindow)
+    }
+}
 
 extension String {
     func isValidatedEmail(_ string: String) -> Bool {
