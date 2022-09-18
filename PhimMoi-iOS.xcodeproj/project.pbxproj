@@ -37,6 +37,9 @@
 		F437470628D4B59100BE6C01 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437470528D4B59100BE6C01 /* DetailView.swift */; };
 		F44729D228D0514D0076F0C5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44729D128D0514D0076F0C5 /* HomeView.swift */; };
 		F48FD72228D5B53500C35A9A /* SmallDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FD72128D5B53500C35A9A /* SmallDetail.swift */; };
+		F49E0BAA28D6E28B00B0BC0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49E0BA928D6E28B00B0BC0A /* LoginView.swift */; };
+		F49E0BAC28D6E2A900B0BC0A /* Login-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49E0BAB28D6E2A900B0BC0A /* Login-ViewModel.swift */; };
+		F49E0BAE28D6F76D00B0BC0A /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49E0BAD28D6F76D00B0BC0A /* SignupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		F437470528D4B59100BE6C01 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		F44729D128D0514D0076F0C5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F48FD72128D5B53500C35A9A /* SmallDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDetail.swift; sourceTree = "<group>"; };
+		F49E0BA928D6E28B00B0BC0A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F49E0BAB28D6E2A900B0BC0A /* Login-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login-ViewModel.swift"; sourceTree = "<group>"; };
+		F49E0BAD28D6F76D00B0BC0A /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,7 @@
 		2935968728D38E1D0056A195 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F49E0BAB28D6E2A900B0BC0A /* Login-ViewModel.swift */,
 				2935968828D38E480056A195 /* MovieViewModel.swift */,
 				2935968A28D38E930056A195 /* SessionViewModel.swift */,
 				29CF82C328D5F67100C6FB11 /* AppStateViewModel.swift */,
@@ -218,6 +225,7 @@
 		F44729CF28D0512B0076F0C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F49E0BA628D6DE3B00B0BC0A /* LoginView */,
 				29CF82C528D5FA8D00C6FB11 /* SplashScreen */,
 				F437470428D4B57D00BE6C01 /* MovieDetail */,
 				2935967628D301070056A195 /* AppScreenView */,
@@ -227,6 +235,15 @@
 				2935967528D300E60056A195 /* HomeView */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F49E0BA628D6DE3B00B0BC0A /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				F49E0BA928D6E28B00B0BC0A /* LoginView.swift */,
+				F49E0BAD28D6F76D00B0BC0A /* SignupView.swift */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F12C42528D49B4E00D9B9AB /* ImagePicker.swift in Sources */,
+				F49E0BAC28D6E2A900B0BC0A /* Login-ViewModel.swift in Sources */,
 				29C4987B28C6A01700363569 /* ContentView.swift in Sources */,
 				29802FA328D441240014535D /* MovieListView.swift in Sources */,
 				2935968B28D38E930056A195 /* SessionViewModel.swift in Sources */,
@@ -321,8 +339,10 @@
 				2935968128D30CB80056A195 /* UserView.swift in Sources */,
 				29C4989528C6A71E00363569 /* Movie.swift in Sources */,
 				29CF82C728D5FAAD00C6FB11 /* SplashScreenView.swift in Sources */,
+				F49E0BAA28D6E28B00B0BC0A /* LoginView.swift in Sources */,
 				F437470328D4B17200BE6C01 /* PosterCard.swift in Sources */,
 				2935968928D38E480056A195 /* MovieViewModel.swift in Sources */,
+				F49E0BAE28D6F76D00B0BC0A /* SignupView.swift in Sources */,
 				2935967828D3012C0056A195 /* AppScreenView.swift in Sources */,
 				F437470628D4B59100BE6C01 /* DetailView.swift in Sources */,
 				F437470128D4B02B00BE6C01 /* CategoryView.swift in Sources */,
