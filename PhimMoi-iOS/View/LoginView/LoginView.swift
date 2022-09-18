@@ -5,6 +5,22 @@
 //  Created by Uyen Nguyen Minh Duy on 18/09/2022.
 //
 
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 3
+  Author: TaylorSwiftUI
+  ID:
+     - Nguyen Quoc Hoang - s3697305
+     - Nguyen Tan Huy - s3864185
+     - Nguyen Minh Duy Uyen - s3819342
+     - Le Ngoc Duy - s3757327
+  Created  date: 31/08/2022
+  Last modified: 18/09/2022
+  Acknowledgement: Acknowledge the resources that you use here.
+*/
+
 import SwiftUI
 
 struct LoginView: View {
@@ -14,6 +30,9 @@ struct LoginView: View {
     
     @EnvironmentObject var sessionVM: SessionViewModel
     @EnvironmentObject var appStateVM: AppStateViewModel
+    
+    @State var inpUsername = ""
+    @State var inpPassword = ""
     
     var body: some View {
         loginScreen
@@ -35,21 +54,23 @@ struct LoginView: View {
                     .frame(width: 250)
                     .padding(.bottom, 50)
                 
-                TextField("Username", text: $vm.username)
+                TextField("Username", text: $inpUsername)
                     .disableAutocorrection(true)
                     .font(.system(size: 25, weight: .regular, design: .rounded))
                     .textFieldStyle(.roundedBorder)
                     .textInputAutocapitalization(.never)
                     .padding([.leading, .trailing], 70)
                 
-                SecureField("Password", text: $vm.password)
+                SecureField("Password", text: $inpPassword)
                     .textFieldStyle(.roundedBorder)
                     .font(.system(size: 25, weight: .regular, design: .rounded))
                     .textInputAutocapitalization(.never)
                     .padding([.leading, .trailing], 70)
                 
-                Button(action: { login() },
-                       label: {
+                Button(action: {
+                    login(email: inpPassword, password: inpPassword)
+                    
+                }, label: {
                     Text("Sign In")
                         .foregroundColor(.white)
                         .padding()
@@ -81,6 +102,10 @@ struct LoginView: View {
                 //                    sessionVM.signUp()
                 //                }
                 
+                Button("Quick sign up") {
+                    sessionVM.signUp(email: inpUsername, password: inpPassword)
+                }
+                
                 Spacer()
             }
         }
@@ -93,8 +118,9 @@ struct LoginView: View {
     }
     
     
-    func login() {
+    func login(email: String, password: String) {
         withAnimation(.easeIn(duration: 1.0)) {
+            sessionVM.signIn(email: email, password: password)
             sessionVM.sessionState = .signedIn
         }
     }
