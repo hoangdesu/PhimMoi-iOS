@@ -23,17 +23,30 @@ struct PhimMoi_iOSApp: App {
     // App's state objects
     @StateObject var appStateVM = AppStateViewModel.shared
     @StateObject var movieVM = MovieViewModel.shared
+    @StateObject var sessionVM = SessionViewModel.shared
     
     var body: some Scene {
         WindowGroup {
             switch appStateVM.appState {
-            case .splash:
+            case .splashScreen:
                 SplashScreenView()
                     .environmentObject(movieVM)
                     .environmentObject(appStateVM)
-            case .homescreen:
-                AppScreenView()
-                    .environmentObject(movieVM)
+                    .environmentObject(sessionVM)
+                
+            case .contentScreen:
+                switch sessionVM.sessionState {
+                case .signedOut:
+                    LoginView()
+                        .environmentObject(sessionVM)
+                        .environmentObject(appStateVM)
+                    
+                case .signedIn:
+                    AppScreenView()
+                        .environmentObject(movieVM)
+                        .environmentObject(appStateVM)
+                        .environmentObject(sessionVM)
+                }
             }
         }
     }

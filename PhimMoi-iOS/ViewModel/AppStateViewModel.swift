@@ -9,13 +9,13 @@ import Foundation
 
 class AppStateViewModel: ObservableObject {
     enum AppState {
-        case splash
-        case homescreen
+        case splashScreen
+        case contentScreen
     }
     
     static let shared = AppStateViewModel()
     
     init() { }
     
-    @Published var appState: AppState = .splash
+    @Published var appState: AppState = .splashScreen
 }

@@ -18,10 +18,14 @@ class MovieViewModel: ObservableObject {
     // using Singleton design pattern
     static let shared = MovieViewModel()
     
-    private init() { }
+    private init() {
+        self.fetchMovies()
+    }
     
     // Properties
     @Published var movies = [Movie]()
+    @Published var featuredMovies = [Movie]()
+    
     @Published var selectedMovie: Movie?
     
     let db = Firestore.firestore()
@@ -41,7 +45,7 @@ class MovieViewModel: ObservableObject {
                 for document in snapshot.documents {
                     let data = document.data()
                     
-                    let fetchedMovie = Movie(
+                    var fetchedMovie = Movie(
                         id: data["id"] as? String ?? "Movie ID",
                         title: data["title"] as? String ?? "Movie Title",
                         posterPath: data["posterPath"] as? String ?? "Movie Poster path",
@@ -52,6 +56,11 @@ class MovieViewModel: ObservableObject {
                         language: data["language"] as? String ?? "Movie Language",
                         length: data["length"] as? String ?? "Movie Length"
                     )
+                    
+                    // handle missing poster path will cause app to crash
+                    if fetchedMovie.posterPath!.isEmpty {
+                        fetchedMovie.posterPath = "https://www.choovie.com.au/asset/img/placeholder.png"
+                    }
                     
                     self.movies.append(fetchedMovie)
                 }
@@ -117,4 +126,20 @@ class MovieViewModel: ObservableObject {
         }
     }
     
+    func getFeaturedMovies() {
+        var seen = [String:String]()
+        
+        for _ in 0...5 {
+            let movie = movies.randomElement()
+            
+            // check for duplication
+            if let movie = movie {
+                if seen[movie.id] == nil {
+                    self.featuredMovies.append(movie)
+                    seen[movie.id] = movie.id
+                }
+            }
+        }
+        
+    }
 }

@@ -7,35 +7,44 @@
 
 import SwiftUI
 import Firebase
-import AVKit
-import YouTubePlayerKit
+import Kingfisher
+
+
 
 struct MovieListView: View {
     
     @EnvironmentObject var movieVM: MovieViewModel
+    
+    @State private var showDetail = false
     
     var body: some View {
         
         NavigationView {
             List(movieVM.movies, id: \.id) { movie in
                 
-                HStack{
-                    Image("dino")
+                HStack {
+                    KFImage(URL(string: movie.posterPath!))
                         .resizable()
                         .scaledToFit()
                         .frame(height: 70)
                         .cornerRadius(4)
                         .padding(.vertical, 4)
+                        .padding(.trailing, 5)
                     
                     Text("\(movie.title)")
                         .fontWeight(.semibold)
                         .lineLimit(2)
                         .minimumScaleFactor(0.5)
                 }
+                .onTapGesture {
+                    showDetail.toggle()
+                }
+                .sheet(isPresented: $showDetail) {
+                    DetailView(movie: movie)
+                }
             }
-            .navigationTitle("Mock movie list")
+            .navigationTitle("My movies ♥")
         }
-        
         
     }
 }

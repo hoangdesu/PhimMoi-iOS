@@ -37,6 +37,8 @@ struct AddMovieView: View {
     @State private var image: Image?
     
     func addMovieHandler() {
+        validateInputs()
+        
         let newMovie = Movie(id: UUID().uuidString,
                              title: inpTitle,
                              posterPath: inpPosterPath,
@@ -71,6 +73,21 @@ struct AddMovieView: View {
         inpLength = ""
     }
     
+    func validateInputs() {
+        guard !inpTitle.isEmpty ||
+              !inpPosterPath.isEmpty ||
+              !inpOverview.isEmpty ||
+              !inpReleaseYear.isEmpty ||
+              !inpGenre.isEmpty ||
+              !inpTrailerLink.isEmpty ||
+              !inpLanguage.isEmpty ||
+              !inpLength.isEmpty
+        else {
+            print("Missing input values, please double check")
+            return
+        }
+    }
+    
     func loadImage() {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
@@ -78,9 +95,7 @@ struct AddMovieView: View {
     
     func uploadImageHandler() {
         guard let inputImage = self.inputImage else { return }
-        
         movieVM.uploadImage(image: inputImage)
-        
     }
     
     // MARK: - FORM VIEW
@@ -123,23 +138,23 @@ struct AddMovieView: View {
                                 showImagePickerSheet = true
                             }
                     }
-                        
+                    
                     
                     // FOR TESTING ONLY
-                    Button("Upload image (TEST)") {
-                        uploadImageHandler()
-                    }
-                    
-                    Text("Recently upload photo from Firebase")
-                    
-//                    if movieVM.mockPosterURL != "" {
-//                        KFImage(URL(string: movieVM.mockPosterURL)!)
-//                            .resizable()
-//                            .aspectRatio(contentMode: .fit)
-//                            .frame(width: 200)
+//                    Button("Upload image (TEST)") {
+//                        uploadImageHandler()
 //                    }
                     
-                
+//                    Text("Recently upload photo from Firebase")
+                    
+                    //                    if movieVM.mockPosterURL != "" {
+                    //                        KFImage(URL(string: movieVM.mockPosterURL)!)
+                    //                            .resizable()
+                    //                            .aspectRatio(contentMode: .fit)
+                    //                            .frame(width: 200)
+                    //                    }
+                    
+                    
                 }
                 
                 Section(header: SectionHeader("Release year")) {

@@ -8,8 +8,6 @@
 import SwiftUI
 import Foundation
 
-
-
 struct HomeView: View {
     
     @EnvironmentObject var movieVM: MovieViewModel
@@ -38,18 +36,18 @@ struct HomeView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 20) {
-                                FeatureCard()
-                                FeatureCard()
-                                FeatureCard()
+                                ForEach(movieVM.featuredMovies, id: \.id) { movie in
+                                    FeatureCard(movie: movie)
+                                }
                             }.padding(20)
                         }
                         
                         // TODO: Create a new movie list for top picks
-                        CategoryView(headline: "Top picks", movieList: movieVM.movies)
+                        CategoryView(headline: "Top picks", movieList: movieVM.movies.shuffled())
                         
-                        CategoryView(headline: "Explore", movieList: movieVM.movies)
+                        CategoryView(headline: "Explore", movieList: movieVM.movies.shuffled())
                         
-                        CategoryView(headline: "Action", movieList: movieVM.movies)
+                        CategoryView(headline: "Action", movieList: movieVM.movies.shuffled())
                     }
                 }
                 .navigationTitle("")
@@ -76,12 +74,13 @@ struct HomeView: View {
                         }
                     }
                 }
+                .onAppear {
+                    DispatchQueue.main.async {
+                        movieVM.getFeaturedMovies()
+                    }
+                }
             }
         }
-        .onAppear() {
-            movieVM.fetchMovies()
-        }
-        
     }
 }
 
