@@ -40,6 +40,7 @@
 		F49E0BAA28D6E28B00B0BC0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49E0BA928D6E28B00B0BC0A /* LoginView.swift */; };
 		F49E0BAC28D6E2A900B0BC0A /* Login-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49E0BAB28D6E2A900B0BC0A /* Login-ViewModel.swift */; };
 		F49E0BAE28D6F76D00B0BC0A /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49E0BAD28D6F76D00B0BC0A /* SignupView.swift */; };
+		F49E0BB028D71F6D00B0BC0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49E0BAF28D71F6D00B0BC0A /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		F49E0BA928D6E28B00B0BC0A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F49E0BAB28D6E2A900B0BC0A /* Login-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login-ViewModel.swift"; sourceTree = "<group>"; };
 		F49E0BAD28D6F76D00B0BC0A /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		F49E0BAF28D71F6D00B0BC0A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				298F498728D63C8100B6FCC4 /* Modifiers.swift */,
+				F49E0BAF28D71F6D00B0BC0A /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				F43746FF28D49D8200BE6C01 /* SearchView.swift in Sources */,
 				7F12C42328D460CA00D9B9AB /* SectionHeader.swift in Sources */,
 				298F498828D63C8100B6FCC4 /* Modifiers.swift in Sources */,
+				F49E0BB028D71F6D00B0BC0A /* Extensions.swift in Sources */,
 				F48FD72228D5B53500C35A9A /* SmallDetail.swift in Sources */,
 				F44729D228D0514D0076F0C5 /* HomeView.swift in Sources */,
 				F43746FA28D494A100BE6C01 /* FeatureCard.swift in Sources */,
